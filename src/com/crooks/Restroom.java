@@ -8,20 +8,21 @@ public class Restroom {
     Double latitude;
     Double longitude;
     String visitDate;
-    boolean isSingleOccupant;
+    boolean isClean;
     Integer rating;
     Integer restroomId;
 
-    public Restroom(String description, Double latitude, Double longitude, String visitDate, boolean isSingleOccupant, Integer rating, Integer restroomId) {
+    public Restroom(String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating,  Integer restroomId) {
+
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
         this.visitDate = visitDate;
-        this.isSingleOccupant = isSingleOccupant;
+        this.isClean = isClean;
         this.rating = rating;
-        this.id = restroomId;
-
+        this.restroomId = restroomId;
     }
+
 
     public Restroom() {
     }
@@ -58,13 +59,6 @@ public class Restroom {
         this.visitDate = visitDate;
     }
 
-    public boolean isSingleOccupant() {
-        return isSingleOccupant;
-    }
-
-    public void setSingleOccupant(boolean singleOccupant) {
-        isSingleOccupant = singleOccupant;
-    }
 
     public Integer getRating() {
         return rating;

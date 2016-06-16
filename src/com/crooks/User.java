@@ -4,12 +4,22 @@ package com.crooks;
  * Created by johncrooks on 6/16/16.
  */
 public class User {
+    Integer id;
     String username;
     String password;
 
-    public User(String username, String password) {
+    public User(Integer id, String username, String password) {
+        this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -27,4 +37,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
