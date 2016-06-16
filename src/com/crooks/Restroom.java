@@ -6,16 +6,19 @@ package com.crooks;
 public class Restroom {
     String description;
     String location;
+    String visitDate;
+    boolean isSingleOccupant;
     int rating;
 
-    public Restroom() {
-    }
-
-    public Restroom(String description, String location, int rating) {
-
+    public Restroom(String description, String location, String visitDate, boolean isSingleOccupant, int rating) {
         this.description = description;
         this.location = location;
+        this.visitDate = visitDate;
+        this.isSingleOccupant = isSingleOccupant;
         this.rating = rating;
+    }
+
+    public Restroom() {
     }
 
     public String getDescription() {
@@ -34,6 +37,22 @@ public class Restroom {
         this.location = location;
     }
 
+    public String getVisitDate() {
+        return visitDate;
+    }
+
+    public void setVisitDate(String visitDate) {
+        this.visitDate = visitDate;
+    }
+
+    public boolean isSingleOccupant() {
+        return isSingleOccupant;
+    }
+
+    public void setSingleOccupant(boolean singleOccupant) {
+        isSingleOccupant = singleOccupant;
+    }
+
     public int getRating() {
         return rating;
     }
@@ -41,4 +60,5 @@ public class Restroom {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
 }
