@@ -11,8 +11,10 @@ public class Restroom {
     boolean isSingleOccupant;
     Integer rating;
     Integer restroomID;
+    Integer rating;
+    Integer restroomId;
 
-    public Restroom(String description, Double latitude, Double longitude, String visitDate, boolean isSingleOccupant, Integer rating,  Integer restroomID) {
+    public Restroom(String description, Double latitude, Double longitude, String visitDate, boolean isSingleOccupant, Integer rating,  Integer restroomId) {
 
         this.description = description;
         this.latitude = latitude;
@@ -20,7 +22,7 @@ public class Restroom {
         this.visitDate = visitDate;
         this.isSingleOccupant = isSingleOccupant;
         this.rating = rating;
-        this.restroomID = restroomID;
+        this.restroomId = restroomId;
     }
 
     public Restroom() {
@@ -66,7 +68,7 @@ public class Restroom {
         isSingleOccupant = singleOccupant;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
@@ -74,5 +76,11 @@ public class Restroom {
         this.rating = rating;
     }
 
+    public Integer getRestroomId() {
+        return restroomId;
+    }
 
+    public void setId(Integer restroomId) {
+        this.restroomId = restroomId;
+    }
 }
