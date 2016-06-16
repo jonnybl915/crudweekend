@@ -5,18 +5,24 @@ package com.crooks;
  */
 public class Restroom {
     String description;
-    String location;
+    Double latitude;
+    Double longitude;
     String visitDate;
-    boolean isSingleOccupant;
-    int rating;
+    boolean isClean;
+    Integer rating;
+    Integer restroomId;
 
-    public Restroom(String description, String location, String visitDate, boolean isSingleOccupant, int rating) {
+    public Restroom(String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating,  Integer restroomId) {
+
         this.description = description;
-        this.location = location;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.visitDate = visitDate;
-        this.isSingleOccupant = isSingleOccupant;
+        this.isClean = isClean;
         this.rating = rating;
+        this.restroomId = restroomId;
     }
+
 
     public Restroom() {
     }
@@ -29,12 +35,20 @@ public class Restroom {
         this.description = description;
     }
 
-    public String getLocation() {
-        return location;
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
     public String getVisitDate() {
@@ -45,20 +59,20 @@ public class Restroom {
         this.visitDate = visitDate;
     }
 
-    public boolean isSingleOccupant() {
-        return isSingleOccupant;
-    }
 
-    public void setSingleOccupant(boolean singleOccupant) {
-        isSingleOccupant = singleOccupant;
-    }
-
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 
+    public Integer getRestroomId() {
+        return restroomId;
+    }
+
+    public void setId(Integer restroomId) {
+        this.restroomId = restroomId;
+    }
 }
