@@ -14,6 +14,9 @@ public class Main {
         Statement stmt = conn.createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS users (id IDENTITY, username VARCHAR, password VARCHAR)");
     }
+    public static void insertRestroom(Connection conn) {
+
+    }
 
     public static void main(String[] args) throws SQLException {
         Server.createWebServer().start();
