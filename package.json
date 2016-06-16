@@ -1,0 +1,24 @@
+{
+  "name": "skipToMyLou",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node-sass styles.scss main.css -w & serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aschuff/crudweekend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aschuff/crudweekend/issues"
+  },
+  "homepage": "https://github.com/aschuff/crudweekend#readme",
+  "dependencies": {
+    "ajax": "0.0.4",
+    "jquery": "^3.0.0",
+    "normalize": "^0.3.1"
+  }
+}

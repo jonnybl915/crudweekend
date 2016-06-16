@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Team Crud</title>
+    <meta charset="utf-8">
+    <title>Skip to the Lou</title>
+    <link charset="utf-8" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" rel="stylesheet" title="no title">
+    <link href="node_modules/normalize-css/normalize.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
 </head>
 <body>
+    <div class="mainContainer">
+        <!--Log In Screen - First Page-->
+        <div class="logInPage">
+            <h2>Skip to the Lou</h2>
+            <p>-so you don't have to hold it-</p><!--LogIn Form-->
+            <form class="form-inline">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputEmail3">Username</label> <input class="form-control" id="exampleInputEmail3" placeholder="Username"
+                    type="email">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputPassword3">Password</label> <input class="form-control" id="exampleInputPassword3" placeholder=
+                    "Password" type="password">
+                </div><button class="signIn" type="submit">Sign in</button>
+            </form>
+        </div><!--Second Page-->
+        <div class="mainPage">
+            <header>
+                <h2>Skip to the Lou</h2>
+                <p>-so you don't have to hold it-</p>
+            </header><!--User Input form-->
+            <div class="userInputArea">
+                <form class="trackerForm">
+                    <fieldset class="form-group">
+                        <input class="form-control" placeholder="Date" type="text">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="exampleTextarea">Describe your experience</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input class="form-control" placeholder="Latitude" type="text">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input class="form-control" placeholder="Longitude" type="text">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="exampleSelect1">Clean?</label> <select class="form-control" id="exampleSelect1">
+                            <option>
+                                Yep!
+                            </option>
+                            <option>
+                                I wouldn't try it...
+                            </option>
+                        </select> <button class="btn btn-primary" type="submit">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
 
+            <!--Google Stuff-->
+            <div id="map">
+
+            </div>
+        </div>
+      <footer>
+
+      </footer>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzzGf415NkDEGMgM4FO6gqSkQVHD_-JZ4&callback=initMap"></script>
+    <script charset="utf-8" src="node_modules/jquery/dist/jquery.js">
+    </script>
+    <script charset="utf-8" src="main.js">
+    </script>
 </body>
 </html>
