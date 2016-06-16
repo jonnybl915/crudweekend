@@ -16,7 +16,7 @@ public class Main {
     public static void createTables(Connection conn) throws SQLException {
         Statement stmt = conn.createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS users (id IDENTITY, username VARCHAR, password VARCHAR)");
-        stmt.execute("CREATE TABLE IF NOT EXISTS restroomLog(id IDENTITY, location VARCHAR, visitDate VARCHAR, isSingleOccupant BOOLEAN, rating INT, userID)");
+        stmt.execute("CREATE TABLE IF NOT EXISTS restroomLog(id IDENTITY, description VARCHAR, latitude DOUBLE, longitude DOUBLE, visitDate VARCHAR, isClean BOOLEAN, rating INT, userID INT)");
     }
     public static void insertUser(Connection conn, String name, String password) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (NULL,?,?)");
@@ -26,7 +26,7 @@ public class Main {
     }
 
     public static User selectUser(Connection conn, String name) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE name = ?");
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ?");
         stmt.setString(1,name);
         ResultSet results = stmt.executeQuery();
         if (results.next()){
@@ -37,13 +37,13 @@ public class Main {
         return null;
     }
 
-    public static void insertRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isSingleOccupant, Integer rating, Integer userID) throws SQLException {
+    public static void insertRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer userID) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("INSERT INTO restroomLog VALUES (NULL,?,?,?,?,?,?,?)");
         stmt.setString(1, description);
         stmt.setDouble(2, latitude);
         stmt.setDouble(3, longitude);
         stmt.setString(4, visitDate);
-        stmt.setBoolean(5, isSingleOccupant);
+        stmt.setBoolean(5, isClean);
         stmt.setInt(6, rating);
         stmt.setInt(7, userID);
         stmt.execute();
@@ -78,11 +78,11 @@ public class Main {
             Double latitude = results.getDouble("restroomLog.latitude");
             Double longitude = results.getDouble("restroomLog.longitude");
             String visitDate = results.getString("restroomLog.visitDate");
-            boolean isSingleOccupant = results.getBoolean("restroomLog.isSingleOccupant");
+            boolean isClean = results.getBoolean("restroomLog.isClean");
             Integer rating = results.getInt("restroomLog.rating");
             Integer userId = results.getInt("restroomLog.userID");
 
-            Restroom r1 = new Restroom(description, latitude, longitude, visitDate, isSingleOccupant, rating, userId);
+            Restroom r1 = new Restroom(description, latitude, longitude, visitDate, isClean, rating, userId);
             restroomArrayList.add(r1);
         }
         return restroomArrayList;
@@ -97,23 +97,30 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
-
+        createTables(conn);
         Spark.staticFileLocation("public");
         Spark.init();
         Spark.get(
                 "/skipToMyLoo",
                 (request, response) -> {
-                    Session session = request.session();
-                    String username = session.attribute("username");
-                    User user = selectUser(conn, username);
-                    if (user == null) {
-                        insertUser(conn, name, pass);
-                    }
-                    else if(!pass.equals(user.password)) {
-                        halt("Incorrect Username/Password Combination.\n" +
-                                "Please Go Back");
-                    }
-                    ArrayList<Restroom> restrooms = selectRestrooms(conn);
+//                    Session session = request.session();
+//                    String username = session.attribute("username");
+////                    String password = session.attribute("password");
+//                    User user = selectUser(conn, username);
+//
+//                    if (user == null) {
+//                        insertUser(conn, username, password);
+//                    }
+////                    else if(!password.equals(user.password)) {
+////                        halt("Incorrect Username/Password Combination.\n" +
+////                                "Please Go Back");
+////                    }
+
+                    insertUser(conn,"j","");
+                    User user = selectUser(conn,"j");
+
+                    insertRestroom(conn, "Very Clean, Could eat my breakfast off the floor", 32.109, -79.736, "Friday the 13th", true, 4, user.id);
+                    ArrayList<Restroom> restrooms = selectRestrooms(conn, user.id);
                     JsonSerializer s = new JsonSerializer();
                     return s.serialize(restrooms);
                 }
@@ -124,7 +131,7 @@ public class Main {
                     String body = request.body();
                     JsonParser parser = new JsonParser();
                     Restroom restroom = parser.parse(body, Restroom.class);
-                    insertRestroom(conn, restroom);
+                    insertRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, restroom.restroomId);
                     return "";
                 }
         );
@@ -134,7 +141,7 @@ public class Main {
                     String body = request.body();
                     JsonParser parser = new JsonParser();
                     Restroom restroom = parser.parse(body, Restroom.class);
-                    updateRestroom(conn, restroom);
+                    updateRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, restroom.restroomId);
                     return "";
                 }
         );
@@ -155,15 +162,15 @@ public class Main {
                 }
         );
     }
-    public static Restroom updateRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isSingleOccupant, Integer rating, Integer restroomId) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("Update restroomLog SET description = ?, latitude = ?, longitude = ?, visitDate = ?, isSingleOccupant = ?, rating = ?, WHERE RestroomId = ?");
+    public static Restroom updateRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer restroomId) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("Update restroomLog SET description = ?, latitude = ?, longitude = ?, visitDate = ?, isClean = ?, rating = ?, WHERE RestroomId = ?");
         stmt.setString(1, description);
         stmt.setDouble(2, latitude);
         stmt.setDouble(3, longitude);
         stmt.setString(4, visitDate);
-        stmt.setBoolean(5, isSingleOccupant);
+        stmt.setBoolean(5, isClean);
         stmt.setInt(6, rating);
         stmt.execute();
-        return new Restroom(description, latitude, longitude, visitDate, isSingleOccupant, rating, restroomId);
+        return new Restroom(description, latitude, longitude, visitDate, isClean, rating, restroomId);
     }
 }
