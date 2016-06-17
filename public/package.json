@@ -2,7 +2,7 @@
   "name": "skipToMyLou",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "start": "node-sass styles.scss main.css -w & serve"
   },
