@@ -1,12 +1,34 @@
 @media (min-width: 320px) and (max-width: 767px) {
 
+header {
+      width: 90%;
+  }
   header .fa-3x {
     font-size: 1.6em;
   }
   .logInPage {
     width: 80%;
-    margin: 15% auto;
+    margin: 10% auto;
+    padding-top: 8%;
   }
+  .form-group-username {
+    width: 75%;
+    margin-left: 13%;
+    margin-top: 20%;
+  }
+  .form-group-password {
+    width: 75%;
+    margin-left: 13%;
+    margin-top: 8%;
+  }
+  button.signIn {
+    float: right;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    color: gray;
+    margin-right: 14%;
+    margin-top: 5%;
+    }
   footer .socialBoxesFooter {
     display: none;
     }

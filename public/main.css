@@ -1,6 +1,19 @@
 * {
   font-family: 'Shadows Into Light Two', cursive; }
 
+html {
+  height: 100%;
+  margin: -15px; }
+
+body {
+  height: 100%; }
+
+.mainContainer {
+  height: 100%; }
+
+h2, p {
+  text-align: center; }
+
 header .socialBoxes {
   float: right; }
   header .socialBoxes .fa-facebook-square {
@@ -9,7 +22,7 @@ header .socialBoxes {
     right: .5em; }
     header .socialBoxes .fa-facebook-square:hover {
       color: #add8e6;
-      opacity: .5; }
+      opacity: .8; }
   header .socialBoxes .fa-twitter-square {
     color: #00aced;
     top: 0;
@@ -49,14 +62,37 @@ footer .socialBoxesFooter {
       color: #ffc0cb;
       opacity: .4; }
 
-h2, p {
-  text-align: center; }
+h2 {
+  padding-top: 0%; }
+
+.logInPage {
+  background-color: cadetblue;
+  color: #FFF;
+  height: 100%; }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  header {
+    width: 90%; }
   header .fa-3x {
     font-size: 1.6em; }
   .logInPage {
     width: 80%;
-    margin: 15% auto; }
+    margin: 10% auto;
+    padding-top: 8%; }
+  .form-group-username {
+    width: 75%;
+    margin-left: 13%;
+    margin-top: 20%; }
+  .form-group-password {
+    width: 75%;
+    margin-left: 13%;
+    margin-top: 8%; }
+  button.signIn {
+    float: right;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    color: gray;
+    margin-right: 14%;
+    margin-top: 5%; }
   footer .socialBoxesFooter {
     display: none; } }
