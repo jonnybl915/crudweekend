@@ -1,6 +1,6 @@
 # crudweekend
 
-This is the first collabrative weekend assignment between the Front-End Engineering class and the Java Back-End Engineering class. 
+This is the first collabrative weekend assignment between the JavaScript Front-End Engineering class and the Java Back-End Engineering class. 
 
 The team is made up of 2 students from both classes. 
 
