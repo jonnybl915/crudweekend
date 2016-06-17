@@ -59,16 +59,15 @@ public class Main {
             Double latitude = results.getDouble("latitude");
             Double longitude = results.getDouble("longitude");
             String visitDate = results.getString("visitDate");
-            boolean isSingleOccupant = results.getBoolean("isSingleOccupant");
+            boolean isClean = results.getBoolean("isClean");
             Integer rating = results.getInt("rating");
-            return new Restroom(description,latitude,longitude,visitDate,isSingleOccupant,rating,restroomID);
+            return new Restroom(description,latitude,longitude,visitDate,isClean,rating,restroomID);
         }
         return null;
     }
 
-    public static ArrayList<Restroom> selectRestrooms(Connection conn, Integer userID) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM restroomLog INNER JOIN users ON restroomLog.userID = users.id WHERE users.id=?");
-        stmt.setInt(1, userID);
+    public static ArrayList<Restroom> selectRestrooms(Connection conn) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM restroomLog");
         ResultSet results = stmt.executeQuery();
 
         ArrayList<Restroom> restroomArrayList = new ArrayList<>();
@@ -120,7 +119,7 @@ public class Main {
                     User user = selectUser(conn,"j");
 
                     insertRestroom(conn, "Very Clean, Could eat my breakfast off the floor", 32.109, -79.736, "Friday the 13th", true, 4, user.id);
-                    ArrayList<Restroom> restrooms = selectRestrooms(conn, user.id);
+                    ArrayList<Restroom> restrooms = selectRestrooms(conn);
                     JsonSerializer s = new JsonSerializer();
                     return s.serialize(restrooms);
                 }
@@ -163,13 +162,14 @@ public class Main {
         );
     }
     public static Restroom updateRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer restroomId) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("Update restroomLog SET description = ?, latitude = ?, longitude = ?, visitDate = ?, isClean = ?, rating = ?, WHERE RestroomId = ?");
+        PreparedStatement stmt = conn.prepareStatement("Update restroomLog SET description = ?, latitude = ?, longitude = ?, visitDate = ?, isClean = ?, rating = ? WHERE id = ?");
         stmt.setString(1, description);
         stmt.setDouble(2, latitude);
         stmt.setDouble(3, longitude);
         stmt.setString(4, visitDate);
         stmt.setBoolean(5, isClean);
         stmt.setInt(6, rating);
+        stmt.setInt(7, restroomId);
         stmt.execute();
         return new Restroom(description, latitude, longitude, visitDate, isClean, rating, restroomId);
     }
