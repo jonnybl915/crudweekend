@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #map {
   height: 500px;
   width: 90%;
@@ -5,3 +6,67 @@
   overflow: hidden;
   transform: translateZ(0px);
   background-color: #e5e3df; }
+=======
+* {
+  font-family: 'Shadows Into Light Two', cursive; }
+
+header .socialBoxes {
+  float: right; }
+  header .socialBoxes .fa-facebook-square {
+    color: #3b5998;
+    top: 0;
+    right: .5em; }
+    header .socialBoxes .fa-facebook-square:hover {
+      color: #add8e6;
+      opacity: .5; }
+  header .socialBoxes .fa-twitter-square {
+    color: #00aced;
+    top: 0;
+    left: -.3em; }
+    header .socialBoxes .fa-twitter-square:hover {
+      color: #add8e6;
+      opacity: .4; }
+  header .socialBoxes .fa-youtube-square {
+    color: #b31217;
+    top: 0;
+    left: -.2em; }
+    header .socialBoxes .fa-youtube-square:hover {
+      color: #ffc0cb;
+      opacity: .4; }
+
+footer .socialBoxesFooter {
+  float: right; }
+  footer .socialBoxesFooter .fa-facebook-square {
+    color: #3b5998;
+    top: 0;
+    right: .5em; }
+    footer .socialBoxesFooter .fa-facebook-square:hover {
+      color: #add8e6;
+      opacity: .5; }
+  footer .socialBoxesFooter .fa-twitter-square {
+    color: #00aced;
+    top: 0;
+    left: -.3em; }
+    footer .socialBoxesFooter .fa-twitter-square:hover {
+      color: #add8e6;
+      opacity: .4; }
+  footer .socialBoxesFooter .fa-youtube-square {
+    color: #b31217;
+    top: 0;
+    left: -.2em; }
+    footer .socialBoxesFooter .fa-youtube-square:hover {
+      color: #ffc0cb;
+      opacity: .4; }
+
+h2, p {
+  text-align: center; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  header .fa-3x {
+    font-size: 1.6em; }
+  .logInPage {
+    width: 80%;
+    margin: 15% auto; }
+  footer .socialBoxesFooter {
+    display: none; } }
+>>>>>>> 02ca288c24b2bec5bd4244b58bb6be865ae9be46
