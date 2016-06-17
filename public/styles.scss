@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+@import "logInPage";
+@import "mainPage";
+#map {
+    height: 500px;
+      width: 90%;
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0px);
+      background-color: rgb(229, 227, 223)
+}
+=======
 * {
   font-family: 'Shadows Into Light Two', cursive;
 }
@@ -7,3 +19,4 @@
 @import "_logInPage";
 @import "_mainPage";
 @import "_mobile";
+>>>>>>> 02ca288c24b2bec5bd4244b58bb6be865ae9be46

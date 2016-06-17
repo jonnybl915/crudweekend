@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+#map {
+  height: 500px;
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0px);
+  background-color: #e5e3df; }
+=======
 * {
   font-family: 'Shadows Into Light Two', cursive; }
 
@@ -60,3 +69,4 @@ h2, p {
     margin: 15% auto; }
   footer .socialBoxesFooter {
     display: none; } }
+>>>>>>> 02ca288c24b2bec5bd4244b58bb6be865ae9be46
