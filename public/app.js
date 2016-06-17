@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  logInPage.init();
+  logInPage.events();
 })
 
 var logInPage = {
@@ -12,7 +12,7 @@ var logInPage = {
   events: function() {
   $('.signIn').on("click", function(event){
     event.preventDefault();
-    
+
   });
 },
 }
