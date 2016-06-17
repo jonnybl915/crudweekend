@@ -6,10 +6,22 @@ header {
   header .fa-3x {
     font-size: 1.6em;
   }
-  .logInPage {
+  h2, p {
+    margin-left: 13%;
+  }
+  .socialBoxes {
+    margin-right: 3%;
+    margin-top: 2%;
+  }
+  .logInPage, .mainPage {
     width: 80%;
     margin: 10% auto;
     padding-top: 8%;
+    border-radius: 5px;
+  }
+  .userInputArea {
+    width: 80%;
+    margin: 5% -1% 0 11%;
   }
   .form-group-username {
     width: 75%;
@@ -29,6 +41,29 @@ header {
     margin-right: 14%;
     margin-top: 5%;
     }
+  .form-group {
+    margin-bottom: 8px;
+  }
+  #isClean {
+    margin-bottom: 3%;
+  }
+  button.btn.btn-primary {
+    float: right;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    color: gray;
+    margin-right: 1%;
+    margin-top: 0;
+  }
+  #map {
+    background-color: white;
+    border: solid black;
+    width: 80%;
+    height: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20%;
+  }
   footer .socialBoxesFooter {
     display: none;
     }
