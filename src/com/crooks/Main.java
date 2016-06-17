@@ -86,6 +86,18 @@ public class Main {
         }
         return restroomArrayList;
     }
+    public static Restroom updateRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer restroomId) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("Update restroomLog SET description = ?, latitude = ?, longitude = ?, visitDate = ?, isClean = ?, rating = ? WHERE id = ?");
+        stmt.setString(1, description);
+        stmt.setDouble(2, latitude);
+        stmt.setDouble(3, longitude);
+        stmt.setString(4, visitDate);
+        stmt.setBoolean(5, isClean);
+        stmt.setInt(6, rating);
+        stmt.setInt(7, restroomId);
+        stmt.execute();
+        return new Restroom(description, latitude, longitude, visitDate, isClean, rating, restroomId);
+    }
 
     public static void deleteRestroom(Connection conn, Integer restroomID) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("DELETE FROM restroomLog WHERE id = ?");
@@ -99,26 +111,38 @@ public class Main {
         createTables(conn);
         Spark.staticFileLocation("public");
         Spark.init();
+        Spark.post(
+                "/login",
+                (request, response) -> {
+                    Session session = request.session();
+                    String username = session.attribute("username");
+                    if(username ==null) {
+                        String body = request.body();
+                        JsonParser parser = new JsonParser();
+                        User loguser = parser.parse(body, User.class);
+
+                        User user = selectUser(conn, loguser.username);
+                        if (user == null) {
+                            insertUser(conn, loguser.username, loguser.password);
+                        } else if (!user.password.equals(loguser.password)) {
+                            halt("Incorrect Username/Password Combination.\n" +
+                                    "Please Go Back");
+                            return false;
+                        }
+                        session.attribute("username", loguser.username);
+                    }
+                    return "Success, this Worked!"; //or throw error
+                }
+        );
         Spark.get(
                 "/skipToMyLoo",
                 (request, response) -> {
-//                    Session session = request.session();
-//                    String username = session.attribute("username");
-////                    String password = session.attribute("password");
-//                    User user = selectUser(conn, username);
-//
-//                    if (user == null) {
-//                        insertUser(conn, username, password);
-//                    }
-////                    else if(!password.equals(user.password)) {
-////                        halt("Incorrect Username/Password Combination.\n" +
-////                                "Please Go Back");
-////                    }
+                    Session session = request.session();
+                    String username = session.attribute("username");
+                    if (username == null) {
+                        halt("YOU MUST LOG IN!!!");
+                    }
 
-                    insertUser(conn,"j","");
-                    User user = selectUser(conn,"j");
-
-                    insertRestroom(conn, "Very Clean, Could eat my breakfast off the floor", 32.109, -79.736, "Friday the 13th", true, 4, user.id);
                     ArrayList<Restroom> restrooms = selectRestrooms(conn);
                     JsonSerializer s = new JsonSerializer();
                     return s.serialize(restrooms);
@@ -160,17 +184,5 @@ public class Main {
                     return "";
                 }
         );
-    }
-    public static Restroom updateRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer restroomId) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("Update restroomLog SET description = ?, latitude = ?, longitude = ?, visitDate = ?, isClean = ?, rating = ? WHERE id = ?");
-        stmt.setString(1, description);
-        stmt.setDouble(2, latitude);
-        stmt.setDouble(3, longitude);
-        stmt.setString(4, visitDate);
-        stmt.setBoolean(5, isClean);
-        stmt.setInt(6, rating);
-        stmt.setInt(7, restroomId);
-        stmt.execute();
-        return new Restroom(description, latitude, longitude, visitDate, isClean, rating, restroomId);
     }
 }
