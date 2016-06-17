@@ -1,2 +1,10 @@
 @import "logInPage";
 @import "mainPage";
+#map {
+    height: 500px;
+      width: 90%;
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0px);
+      background-color: rgb(229, 227, 223)
+}
