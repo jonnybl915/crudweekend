@@ -1,2 +1,9 @@
-@import "logInPage";
-@import "mainPage";
+* {
+  font-family: 'Shadows Into Light Two', cursive;
+}
+
+@import "_header";
+@import "_footer";
+@import "_logInPage";
+@import "_mainPage";
+@import "_mobile";
