@@ -24,13 +24,12 @@
             <h2>Skip to the Lou</h2>
             <p>-so you don't have to hold it-</p><!--LogIn Form-->
             <form class="form-inline">
-                <div class="form-group-username">
-                    <label class="sr-only" for="exampleInputEmail3">Username</label> <input class="form-control" id="exampleInputEmail3" placeholder="Username"
+                <div class="form-group">
+                    <label class="sr-only">Username</label> <input class="form-control" id="Username" placeholder="Username"
                     type="email">
                 </div>
-                <div class="form-group-password">
-                    <label class="sr-only" for="exampleInputPassword3">Password</label> <input class="form-control" id="exampleInputPassword3" placeholder=
-                    "Password" type="password">
+                <div class="form-group">
+                    <label class="sr-only">Password</label> <input class="form-control" id="Password" placeholder="Password" type="password">
                 </div><button class="signIn" type="submit">Sign in</button>
             </form>
         </div><!--Second Page-->
@@ -64,9 +63,19 @@
             </div>
 
             <!--Google Stuff-->
-            <div id="map">
-
-            </div>
+            <div id="map"></div>
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: {lat: 44.540, lng: -78.546},
+            zoom: 8
+        });
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzzGf415NkDEGMgM4FO6gqSkQVHD_-JZ4&callback=initMap">
+    </script>
         </div>
       <footer>
         <div class="socialBoxesFooter">
@@ -76,7 +85,6 @@
                 </div>
       </footer>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzzGf415NkDEGMgM4FO6gqSkQVHD_-JZ4&callback=initMap"></script>
     <script charset="utf-8" src="node_modules/jquery/dist/jquery.js">
     </script>
     <script charset="utf-8" src="app.js">

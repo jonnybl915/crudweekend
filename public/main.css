@@ -121,14 +121,15 @@ h2 {
     border-radius: 10px;
     color: gray;
     margin-right: 1%;
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 10%;
+    width: 99%;
+    height: 28px; }
   #map {
-    background-color: white;
-    border: solid black;
+    border-radius: 5px;
     width: 80%;
     height: 30%;
     margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 20%; }
+    margin-right: 10%; }
   footer .socialBoxesFooter {
     display: none; } }
