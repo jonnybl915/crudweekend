@@ -103,18 +103,6 @@ public class Main {
         Spark.get(
                 "/skipToMyLoo",
                 (request, response) -> {
-//                    Session session = request.session();
-//                    String username = session.attribute("username");
-////                    String password = session.attribute("password");
-//                    User user = selectUser(conn, username);
-//
-//                    if (user == null) {
-//                        insertUser(conn, username, password);
-//                    }
-////                    else if(!password.equals(user.password)) {
-////                        halt("Incorrect Username/Password Combination.\n" +
-////                                "Please Go Back");
-////                    }
 
                     insertUser(conn,"j","");
                     User user = selectUser(conn,"j");
