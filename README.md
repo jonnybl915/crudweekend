@@ -6,7 +6,7 @@ This is the first collabrative weekend assignment between the JavaScript Front-E
 
 The team is made up of 2 students from both classes. 
 
-The Back End Crew is using the Spark Web framework, H2 Databases, and SQL using Intellij as the IDE.
+The Back End Crew is using the Spark Web framework, H2 Databases, and SQL.
 
 The Front End Crew is using Google Maps API, Node.js and jquery;
 
