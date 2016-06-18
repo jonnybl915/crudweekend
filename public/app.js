@@ -8,26 +8,14 @@ var logInPage = {
   $('.signIn').on("click", function(event){
     event.preventDefault();
     $.ajax({
-      url:"localhost:4567/login",
+      url:"/login",
       method: "POST",
       data: {
           user:$("#Username").val(),
           password:$('#Password').val(),
         },
       success: function(data) {
-      var success =  console.log("This worked", data);
-      if(success){
-        $.ajax({
-          url:"",
-          method:"GET",
-      success: function(data){
-        console.log("SUCCESS!!!",data)
-      }
-      error: function(err) {
-        console.log("data not recieved fuckboi!!!!!")
-      }
-        })
-      }
+      var success =  console.log("This worked", data)
       },
       error: function(err) {
         console.error("OH CRAP", err);
@@ -37,5 +25,5 @@ var logInPage = {
 },
 }
 var mainPage = {
-
+  
 }
