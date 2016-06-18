@@ -19,11 +19,19 @@ public class Main {
         stmt.execute("CREATE TABLE IF NOT EXISTS users (id IDENTITY, username VARCHAR, password VARCHAR)");
         stmt.execute("CREATE TABLE IF NOT EXISTS restroomLog(id IDENTITY, description VARCHAR, latitude DOUBLE, longitude DOUBLE, visitDate VARCHAR, isClean BOOLEAN, rating INT, userID INT)");
     }
-    public static void insertUser(Connection conn, String name, String password) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (NULL,?,?)");
+    public static int insertUser(Connection conn, String name, String password) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO users VALUES (NULL,?,?)", Statement.RETURN_GENERATED_KEYS);
         stmt.setString(1,name);
         stmt.setString(2,password);
         stmt.execute();
+
+        // return id
+        ResultSet rs = stmt.getGeneratedKeys();
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+        return -1;
+
     }
 
     public static User selectUser(Connection conn, String name) throws SQLException {
@@ -38,8 +46,8 @@ public class Main {
         return null;
     }
 
-    public static void insertRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer userID) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("INSERT INTO restroomLog VALUES (NULL,?,?,?,?,?,?,?)");
+    public static int insertRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer userID) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO restroomLog VALUES (NULL,?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
         stmt.setString(1, description);
         stmt.setDouble(2, latitude);
         stmt.setDouble(3, longitude);
@@ -48,6 +56,13 @@ public class Main {
         stmt.setInt(6, rating);
         stmt.setInt(7, userID);
         stmt.execute();
+
+        // return id
+        ResultSet rs = stmt.getGeneratedKeys();
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+        return -1;
 
     }
 
@@ -137,7 +152,7 @@ public class Main {
                 }
         );
         Spark.get(
-                "/skipToMyLoo",
+                "/skipToTheLoo",
                 (request, response) -> {
                     Session session = request.session();
                     String username = session.attribute("username");
@@ -151,7 +166,7 @@ public class Main {
                 }
         );
         Spark.post(
-                "/skipToMyLoo",
+                "/skipToTheLoo",
                 (request, response) -> {
                     String body = request.body();
                     JsonParser parser = new JsonParser();
@@ -161,7 +176,7 @@ public class Main {
                 }
         );
         Spark.put(
-                "/skipToMyLoo",
+                "/skipToTheLoo",
                 (request, response) -> {
                     String body = request.body();
                     JsonParser parser = new JsonParser();
@@ -171,7 +186,7 @@ public class Main {
                 }
         );
         Spark.delete(
-                "/skipToMyLoo/:id",
+                "/skipToTheLoo/:id",
                 (request, response) -> {
                     Integer id = Integer.valueOf(request.params(":id"));
                     deleteRestroom(conn, id);
