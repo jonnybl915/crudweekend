@@ -1,4 +1,3 @@
-
 #map {
   height: 500px;
   width: 90%;
@@ -6,8 +5,25 @@
   overflow: hidden;
   transform: translateZ(0px);
   background-color: #e5e3df; }
+
 * {
   font-family: 'Shadows Into Light Two', cursive; }
+
+html {
+  height: 100%;
+  margin: -15px; }
+
+body {
+  height: 100%; }
+
+.mainContainer {
+  height: 100%; }
+
+h2, p {
+  text-align: center; }
+
+h2 {
+  padding-top: 0%; }
 
 header .socialBoxes {
   float: right; }
@@ -17,7 +33,7 @@ header .socialBoxes {
     right: .5em; }
     header .socialBoxes .fa-facebook-square:hover {
       color: #add8e6;
-      opacity: .5; }
+      opacity: .8; }
   header .socialBoxes .fa-twitter-square {
     color: #00aced;
     top: 0;
@@ -57,14 +73,71 @@ footer .socialBoxesFooter {
       color: #ffc0cb;
       opacity: .4; }
 
-h2, p {
-  text-align: center; }
+h2 {
+  padding-top: 0%; }
+
+.logInPage {
+  background-color: cadetblue;
+  color: #FFF;
+  height: 100%; }
+
+.mainPage {
+  background-color: cadetblue;
+  color: #FFF;
+  height: 100%; }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  header {
+    width: 90%; }
   header .fa-3x {
     font-size: 1.6em; }
-  .logInPage {
+  h2, p {
+    margin-left: 13%; }
+  .socialBoxes {
+    margin-right: 3%;
+    margin-top: 2%; }
+  .logInPage, .mainPage {
     width: 80%;
-    margin: 15% auto; }
+    margin: 10% auto;
+    padding-top: 8%;
+    border-radius: 5px; }
+  .userInputArea {
+    width: 80%;
+    margin: 5% -1% 0 11%; }
+  .form-group-username {
+    width: 75%;
+    margin-left: 13%;
+    margin-top: 20%; }
+  .form-group-password {
+    width: 75%;
+    margin-left: 13%;
+    margin-top: 8%; }
+  button.signIn {
+    float: right;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    color: gray;
+    margin-right: 14%;
+    margin-top: 5%; }
+  .form-group {
+    margin-bottom: 8px; }
+  #isClean {
+    margin-bottom: 3%; }
+  button.btn.btn-primary {
+    float: right;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    color: gray;
+    margin-right: 1%;
+    margin-top: 0;
+    margin-bottom: 10%;
+    width: 99%;
+    height: 28px; }
+  #map {
+    border-radius: 5px;
+    width: 80%;
+    height: 30%;
+    margin-left: 10%;
+    margin-right: 10%; }
   footer .socialBoxesFooter {
     display: none; } }
