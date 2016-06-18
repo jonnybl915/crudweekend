@@ -19,6 +19,7 @@ var logInPage = {
       success: function(data) {
       var success =  console.log("This worked", data)
       $('.mainPage').toggle();
+
       },
       error: function(err) {
         console.error("OH CRAP", err);
@@ -26,6 +27,19 @@ var logInPage = {
     })
   });
 },
+Read: function() {
+  $.ajax({
+    method:"GET",
+    url:"/login",
+  success:function(data) {
+    console.log(data);
+    data = JSON.parse(data)
+  },
+  error:function(err) {
+    console.err("Oh SHit!!!",data)
+  }
+  })
+}
 }
 var mainPage = {
 
