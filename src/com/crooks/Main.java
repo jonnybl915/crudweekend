@@ -10,6 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import static spark.Spark.halt;
+import static spark.Spark.port;
 
 public class Main {
 
@@ -106,10 +107,11 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException {
+        port(3000);
         Server.createWebServer().start();
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         createTables(conn);
-        Spark.staticFileLocation("public");
+        Spark.externalStaticFileLocation("public");
         Spark.init();
         Spark.post(
                 "/login",
