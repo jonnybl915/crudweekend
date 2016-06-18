@@ -13,16 +13,19 @@ var logInPage = {
       method: "POST",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
-          user:$("#Username").val(),
+          username:$("#Username").val(),
           password:$('#Password').val(),
         }),
-      success: function(data) {
-      var success =  console.log("This worked", data)
-      $('.mainPage').toggle();
-
+      success: function(data) { if(1){
+      console.log("This worked", data);
+      $('.logInPage').toggle();
+      $(".mainPage").toggle();
+    }
       },
-      error: function(err) {
+      error: function(err) { if(-1){
         console.error("OH CRAP", err);
+      alert("HOLD IT!");
+    }
       }
     })
   });
