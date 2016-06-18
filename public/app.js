@@ -16,16 +16,33 @@ var logInPage = {
           username:$("#Username").val(),
           password:$('#Password').val(),
         }),
-      success: function(data) {
-      var success =  console.log("This worked", data)
-      $('.mainPage').toggle();
+      success: function(data) { if(1){
+      console.log("This worked", data);
+      $('.logInPage').toggle();
+      $(".mainPage").toggle();
+    }
       },
-      error: function(err) {
+      error: function(err) { if(-1){
         console.error("OH CRAP", err);
+      alert("HOLD IT!");
+    }
       }
     })
   });
 },
+Read: function() {
+  $.ajax({
+    method:"GET",
+    url:"/login",
+  success:function(data) {
+    console.log(data);
+    data = JSON.parse(data)
+  },
+  error:function(err) {
+    console.err("Oh SHit!!!",data)
+  }
+  })
+}
 }
 var mainPage = {
 
