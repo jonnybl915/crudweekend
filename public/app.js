@@ -13,7 +13,7 @@ var logInPage = {
       method: "POST",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({
-          user:$("#Username").val(),
+          username:$("#Username").val(),
           password:$('#Password').val(),
         }),
       success: function(data) {
