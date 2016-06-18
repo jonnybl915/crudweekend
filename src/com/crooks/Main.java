@@ -133,22 +133,24 @@ public class Main {
                 (request, response) -> {
                     Session session = request.session();
                     String username = session.attribute("username");
+                    int success;
                     if(username ==null) {
                         String body = request.body();
                         JsonParser parser = new JsonParser();
                         User loguser = parser.parse(body, User.class);
-
                         User user = selectUser(conn, loguser.username);
                         if (user == null) {
                             insertUser(conn, loguser.username, loguser.password);
+                            success = 1;
+                            return success;
                         } else if (!user.password.equals(loguser.password)) {
                             halt("Incorrect Username/Password Combination.\n" +
                                     "Please Go Back");
-                            return false;
+                            return -1;
                         }
                         session.attribute("username", loguser.username);
                     }
-                    return "Success, this Worked!"; //or throw error
+                    return 1; //or throw error
                 }
         );
         Spark.get(
