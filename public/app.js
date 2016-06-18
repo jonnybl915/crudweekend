@@ -8,7 +8,7 @@ var logInPage = {
   $('.signIn').on("click", function(event){
     event.preventDefault();
     $.ajax({
-      url:"localhost:4567/login",
+      url:"/login",
       method: "POST",
       data: {
           user:$("#Username").val(),
