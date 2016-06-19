@@ -133,10 +133,7 @@ public class Main {
                 (request, response) -> {
                     Session session = request.session();
                     String username = session.attribute("username");
-                    if(username.isEmpty()) {
-                        halt("You cannot leave any text fields blank!! please go back...");
-                        return "error";
-                    }
+
                     if(username ==null) {
                         String body = request.body();
                         JsonParser parser = new JsonParser();
@@ -146,9 +143,9 @@ public class Main {
                         if (user == null) {
                             insertUser(conn, loguser.username, loguser.password);
                         } else if (!user.password.equals(loguser.password)) {
-                            halt("Incorrect Username/Password Combination.\n" +
-                                    "Please Go Back");
-                            return "error";
+                            //halt(400, "Incorrect Username/Password Combination.\n" +
+                                    //"Please Go Back");
+                            throw new Exception("you done goofed");
                         }
                         session.attribute("username", loguser.username);
                     }
