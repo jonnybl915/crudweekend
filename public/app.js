@@ -14,12 +14,8 @@ $(document).ready(function(){
 var skipToMyLou = {
 
   events: function() {
-  $(".mainPage").toggle();
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
-    if(($("#Username").val()||$('#Password').val())===null){
-      return false;
-    }
     event.preventDefault();
     $.ajax({
       url:"/login",
@@ -40,6 +36,20 @@ var skipToMyLou = {
       }
     })
   });
+  /*SUBMIT TOILET INFORMATION */
+  $('Submission').on("click",function(event){
+  event.preventDefault();
+   $.ajax({
+        url:"/skipToTheLoo",
+        method:"POST",
+        contentType:"application/json; charset=utf-8",
+        data: JSON.stringify({
+        description:$("exampleTextarea").val(),
+        latitude:$("#Latitude").val(),
+        longitude:$("#Longitude").val(),
+        visitDate:$("#When").val()
+      }),
+})});
 
 },
 Read: function() {
