@@ -1,15 +1,7 @@
-/* Initialize map at the beginning of the page */
-function initMap() {
-  var mapDiv = document.getElementById('map');
-  var map = new google.maps.Map(mapDiv, {
-      center: {lat: 44.540, lng: -78.546},
-      zoom: 8
-  });
-}
-
 $(document).ready(function(){
+
   skipToMyLou.events();
-  $('.mainPage').addClass("hidden");
+  $('.mainPage').addClass("hidden").toggle();
 })
 
 var skipToMyLou = {
@@ -28,8 +20,9 @@ var skipToMyLou = {
         }),
       success: function(data) {
       console.log("This worked", data);
+      skipToMyLou.Read();
       $('.logInPage').fadeToggle(3000);
-      $(".mainPage").removeClass("hidden");
+      $(".mainPage").removeClass("hidden").toggle();
   },
       error: function(err) {
       console.error("OH CRAP", err);
@@ -56,7 +49,7 @@ var skipToMyLou = {
 Read: function() {
   $.ajax({
     method:"GET",
-    url:"login",
+    url:"/skipToTheLoo",
   success:function(data) {
     console.log(data);
     data = JSON.parse(data)
