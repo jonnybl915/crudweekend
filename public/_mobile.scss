@@ -58,9 +58,16 @@ html body div.mainContainer {
         font-size: 2em;
       }
     }
+    h2, p {
+      display: none;
+    }
     .userInputArea {
       width: 80%;
-      margin: 5% -1% 0 11%;
+      height: 40%;
+      margin: 5% -1% 0 10%;
+    }
+    form.trackerForm {
+      width: 250%;
     }
     .form-group-username {
       width: 75%;
@@ -75,20 +82,29 @@ html body div.mainContainer {
     #isClean {
       margin-bottom: 3%;
     }
+    div.restroomRating {
+      width: 250%;
+    }
+    h4 {
+      font-size: initial;
+    }
     button.btn.btn-primary {
       float: right;
+      position: absolute;
       border-radius: 10px;
       margin-right: 1%;
-      margin-top: 0;
-      margin-bottom: 8%;
-      width: 99%;
+      margin-top: 2%;
+      margin-bottom: 6%;
+      width: 27%;
       height: 28px;
     }
-    #map {
+    div#map {
       border-radius: 5px;
-      width: 80%;
-      height: 23%;
-      margin-left: 10%;
+      position: absolute;
+      width: 63%;
+      height: 30%;
+      margin-left: 12%;
+      bottom: 7%;
       margin-right: 10%;
       }
     fieldset.form-group {

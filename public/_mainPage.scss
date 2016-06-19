@@ -71,7 +71,9 @@ div.mainPage {
       border-radius: 13px;
       border: solid white 2px;
         &:hover{
-          opacity: .8;
+          background: gray;
+          opacity: .5;
+          cursor: pointer;
         }
     }
     button.btn-primary {
@@ -82,6 +84,7 @@ div.mainPage {
       width: 25%;
         &:hover{
           opacity: .8;
+          cursor: pointer;
         }
     }
     div#map {
@@ -89,7 +92,7 @@ div.mainPage {
       width: 35%;
       height: 57%;
       margin-left: 41%;
-      bottom: -64%;
+      bottom: 2%;
     }
     h5 {
       text-align: center;

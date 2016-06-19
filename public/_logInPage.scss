@@ -45,5 +45,9 @@
     margin-bottom: 12%;
     background-color: #3B5998;
     border-radius: 10px;
+      &:hover{
+        opacity: .8;
+        cursor: pointer
+      }
   }
 }
