@@ -177,10 +177,13 @@ public class Main {
         Spark.post(
                 "/skipToTheLoo",
                 (request, response) -> {
+                    Session session = request.session();
+                    String username = session.attribute("username");
+                    User user = selectUser(conn, username);
                     String body = request.body();
                     JsonParser parser = new JsonParser();
                     Restroom restroom = parser.parse(body, Restroom.class);
-                    insertRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, restroom.userId);
+                    insertRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, user.id);
                     return "";
                 }
         );
@@ -212,4 +215,3 @@ public class Main {
         );
     }
 }
-//asdlkfjaslkjfalskdjflaksdjflaskdfjalskdjf
