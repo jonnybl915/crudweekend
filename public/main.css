@@ -41,37 +41,72 @@ header .socialBoxes {
       color: #ffc0cb;
       opacity: .4; }
 
-footer .socialBoxesFooter {
-  float: right; }
-  footer .socialBoxesFooter .fa-facebook-square {
+footer {
+  width: 100%;
+  height: 10%; }
+
+.socialBoxesFooter {
+  float: left; }
+  .socialBoxesFooter .fa-facebook-square {
     color: #3b5998;
     top: 0;
     right: .5em; }
-    footer .socialBoxesFooter .fa-facebook-square:hover {
+    .socialBoxesFooter .fa-facebook-square:hover {
       color: #add8e6;
       opacity: .5; }
-  footer .socialBoxesFooter .fa-twitter-square {
+  .socialBoxesFooter .fa-twitter-square {
     color: #00aced;
     top: 0;
     left: -.3em; }
-    footer .socialBoxesFooter .fa-twitter-square:hover {
+    .socialBoxesFooter .fa-twitter-square:hover {
       color: #add8e6;
       opacity: .4; }
-  footer .socialBoxesFooter .fa-youtube-square {
+  .socialBoxesFooter .fa-youtube-square {
     color: #b31217;
     top: 0;
     left: -.2em; }
-    footer .socialBoxesFooter .fa-youtube-square:hover {
+    .socialBoxesFooter .fa-youtube-square:hover {
       color: #ffc0cb;
       opacity: .4; }
 
 h2 {
-  padding-top: 0%; }
+  text-align: center;
+  font-size: -webkit-xxx-large;
+  padding-top: 4%; }
+
+p {
+  font-size: x-large; }
 
 .logInPage {
   background-color: cadetblue;
   color: #FFF;
   height: 100%; }
+
+form.form-inline {
+  text-align: center;
+  margin-top: 5%;
+  width: 25%;
+  height: 47%;
+  margin-left: 38%; }
+
+div.form-group {
+  margin-right: 16%;
+  margin-bottom: 10%; }
+
+input#Username.form-control {
+  margin-bottom: 20%;
+  width: 112%; }
+
+input#Password.form-control {
+  margin-left: 1%;
+  width: 112%; }
+
+button.signIn {
+  width: 37%;
+  margin-top: 7%;
+  background-color: antiquewhite;
+  color: gray;
+  margin-left: 7%; }
 
 .mainPage {
   background-color: cadetblue;
@@ -84,7 +119,7 @@ h2 {
   header .fa-3x {
     font-size: 1.6em; }
   h2, p {
-    margin-left: 13%; }
+    margin-left: 3%; }
   .socialBoxes {
     margin-right: 3%;
     margin-top: 2%; }
@@ -104,6 +139,10 @@ h2 {
     width: 75%;
     margin-left: 13%;
     margin-top: 8%; }
+  form.form-inline {
+    width: 80%;
+    margin-left: 12%;
+    margin-top: 13%; }
   button.signIn {
     float: right;
     background-color: antiquewhite;

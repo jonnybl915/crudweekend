@@ -1,8 +1,39 @@
 h2 {
-  padding-top: 0%;
+  text-align: center;
+  font-size: -webkit-xxx-large;
+  padding-top: 4%;
+}
+p {
+  font-size: x-large;
 }
 .logInPage {
   background-color: cadetblue;
   color: #FFF;
   height: 100%;
+}
+form.form-inline {
+  text-align: center;
+  margin-top: 5%;
+  width: 25%;
+  height: 47%;
+  margin-left: 38%;
+}
+div.form-group {
+  margin-right: 16%;
+  margin-bottom: 10%;
+}
+input#Username.form-control {
+  margin-bottom: 20%;
+  width: 112%;
+}
+input#Password.form-control {
+  margin-left: 1%;
+  width: 112%;
+}
+button.signIn {
+  width: 37%;
+  margin-top: 7%;
+  background-color: antiquewhite;
+  color: gray;
+  margin-left: 7%;
 }
