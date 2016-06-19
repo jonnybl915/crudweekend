@@ -44,7 +44,7 @@ var skipToMyLou = {
         visitDate:$("#When").val(),
         isClean:true,
         rating:RatingData,
-        // userId:1
+        userId:1
       }),
     success: function(data){
       console.log("DATA SENT",data);
