@@ -15,7 +15,6 @@ var skipToMyLou = {
 
   events: function() {
   $(".mainPage").toggle();
-
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
     if(($("#Username").val()||$('#Password').val())===null){
@@ -36,7 +35,7 @@ var skipToMyLou = {
       $(".mainPage").fadeToggle(3000);
   },
       error: function(err) {
-        console.error("OH CRAP", err);
+      console.error("OH CRAP", err);
       alert("HOLD IT!");
       }
     })

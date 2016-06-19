@@ -12,17 +12,21 @@
 </head>
 <body>
     <div class="mainContainer">
-      <header>
-        <div class="socialBoxes">
-                    <a href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-3x"></span></a>
-                    <a href="https://twitter.com/"><span class="fa fa-twitter-square fa-3x"></span></a>
-                    <a href="https://youtube.com/"><span class="fa fa-youtube-square fa-3x"></span></a>
-                </div>
-      </header>
+      <div id="bg-image">
+        <header>
+
+        </header>
         <!--Log In Screen - First Page-->
+
         <div class="logInPage">
+          <div class="socialBoxes">
+                      <a href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-3x"></span></a>
+                      <a href="https://twitter.com/"><span class="fa fa-twitter-square fa-3x"></span></a>
+                      <a href="https://youtube.com/"><span class="fa fa-youtube-square fa-3x"></span></a>
+                  </div>
             <h2>Skip to the Lou</h2>
-            <p>-so you don't have to hold it-</p><!--LogIn Form-->
+            <p>-so you don't have to hold it-</p>
+            <!--LogIn Form-->
             <form class="form-inline">
                 <div class="form-group">
                     <label class="sr-only">Username</label> <input class="form-control" id="Username" placeholder="Username"
@@ -30,10 +34,12 @@
                 </div>
                 <div class="form-group">
                     <label class="sr-only">Password</label> <input class="form-control" id="Password" placeholder="Password" type="password">
-                </div><button class="signIn" type="submit">Sign in</button>
+                </div>
+                <button class="signIn" type="submit">Sign in</button>
             </form>
-        </div><!--Second Page-->
-        <div class="mainPage">
+        </div>
+      </div><!--Second Page-->
+        <div class="mainPage hidden">
             <header>
                 <h2>Skip to the Lou</h2>
                 <p>-so you don't have to hold it-</p>
@@ -78,11 +84,10 @@
     </script>
         </div>
       <footer>
-        <div class="socialBoxesFooter">
-                    <a href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-3x"></span></a>
-                    <a href="https://twitter.com/"><span class="fa fa-twitter-square fa-3x"></span></a>
-                    <a href="https://youtube.com/"><span class="fa fa-youtube-square fa-3x"></span></a>
-                </div>
+        <h5>
+          CrudWeekend Collaboration Project. Front-End & Back-End. The Iron Yard, 2016
+        </h5>
+
       </footer>
     </div>
     <script charset="utf-8" src="node_modules/jquery/dist/jquery.js">
