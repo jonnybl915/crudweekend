@@ -5,7 +5,7 @@ $(document).ready(function(){
 var logInPage = {
 
   events: function() {
-  $(".mainPage").toggle();
+  // $(".mainPage").toggle();
   $('.signIn').on("click", function(event){
     event.preventDefault();
     $.ajax({

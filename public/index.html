@@ -18,12 +18,8 @@
         </header>
         <!--Log In Screen - First Page-->
 
-        <div class="logInPage">
-          <div class="socialBoxes">
-                      <a href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-3x"></span></a>
-                      <a href="https://twitter.com/"><span class="fa fa-twitter-square fa-3x"></span></a>
-                      <a href="https://youtube.com/"><span class="fa fa-youtube-square fa-3x"></span></a>
-                  </div>
+        <div class="logInPage hidden">
+
             <h2>Skip to the Lou</h2>
             <p>-so you don't have to hold it-</p>
             <!--LogIn Form-->
@@ -38,12 +34,19 @@
                 <button class="signIn" type="submit">Sign in</button>
             </form>
         </div>
-      </div><!--Second Page-->
-        <div class="mainPage hidden">
+
+      <!--Second Page-->
+        <div class="mainPage">
             <header>
-                <h2>Skip to the Lou</h2>
-                <p>-so you don't have to hold it-</p>
-            </header><!--User Input form-->
+              <div class="socialBoxes">
+                  <a href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-3x"></span></a>
+                  <a href="https://twitter.com/"><span class="fa fa-twitter-square fa-3x"></span></a>
+                  <a href="https://youtube.com/"><span class="fa fa-youtube-square fa-3x"></span></a>
+              </div>
+            </header>
+            <h2>Skip to the Lou</h2>
+            <p>-so you don't have to hold it-</p>
+            <!--User Input form-->
             <div class="userInputArea">
                 <form class="trackerForm">
                     <fieldset class="form-group">
@@ -60,11 +63,12 @@
                             <option>Clean?</option>
                             <option>Yep!</option>
                             <option>I wouldn't try it...</option>
+                      </fieldset>
                       <fieldset class="form-group">
                           <textarea class="form-control" id="exampleTextarea" rows="2" placeholder="Comments..."></textarea>
                       </fieldset>
                     </select> <button class="btn btn-primary" type="submit">Submit</button>
-                    </fieldset>
+                    <!-- </fieldset> -->
                 </form>
             </div>
 
@@ -83,15 +87,14 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzzGf415NkDEGMgM4FO6gqSkQVHD_-JZ4&callback=initMap">
     </script>
         </div>
+        </div>
       <footer>
         <h5>
-          CrudWeekend Collaboration Project. Front-End & Back-End. The Iron Yard, 2016
+          CrudWeekend Collaboration Project. The Iron Yard, 2016
         </h5>
-
       </footer>
     </div>
-    <script charset="utf-8" src="node_modules/jquery/dist/jquery.js">
-    </script>
+    <script charset="utf-8" src="node_modules/jquery/dist/jquery.js"></script>
     <script charset="utf-8" src="app.js">
     </script>
 </body>
