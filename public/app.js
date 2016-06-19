@@ -5,36 +5,44 @@ $(document).ready(function(){
 var logInPage = {
 
   events: function() {
+  $(".mainPage").toggle();
   $('.signIn').on("click", function(event){
     event.preventDefault();
     $.ajax({
-      url:"localhost:4567/login",
+      url:"/login",
       method: "POST",
-      data: {
-          user:$("#Username").val(),
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify({
+          username:$("#Username").val(),
           password:$('#Password').val(),
-        },
-      success: function(data) {
-      var success =  console.log("This worked", data);
-      if(success){
-        $.ajax({
-          url:"",
-          method:"GET",
-      success: function(data){
-        console.log("SUCCESS!!!",data)
-      }
-      error: function(err) {
-        console.log("data not recieved fuckboi!!!!!")
-      }
-        })
-      }
+        }),
+      success: function(data) { if(1){
+      console.log("This worked", data);
+      $('.logInPage').toggle();
+      $(".mainPage").toggle();
+    }
       },
-      error: function(err) {
+      error: function(err) { if(-1){
         console.error("OH CRAP", err);
+      alert("HOLD IT!");
+    }
       }
     })
   });
 },
+Read: function() {
+  $.ajax({
+    method:"GET",
+    url:"/login",
+  success:function(data) {
+    console.log(data);
+    data = JSON.parse(data)
+  },
+  error:function(err) {
+    console.err("Oh SHit!!!",data)
+  }
+  })
+}
 }
 var mainPage = {
 
