@@ -135,13 +135,18 @@ public class Main {
                     String username = session.attribute("username");
 
                     if(username ==null) {
+
                         String body = request.body();
                         JsonParser parser = new JsonParser();
                         User loguser = parser.parse(body, User.class);
 
                         User user = selectUser(conn, loguser.username);
                         if (user == null) {
-                            insertUser(conn, loguser.username, loguser.password);
+                            if(loguser.username.isEmpty()) {
+                                throw new Exception("YOU MUST FILL IN ALL FIELDS");
+                            } else {
+                                insertUser(conn, loguser.username, loguser.password);
+                            }
                         } else if (!user.password.equals(loguser.password)) {
                             //halt(400, "Incorrect Username/Password Combination.\n" +
                                     //"Please Go Back");
