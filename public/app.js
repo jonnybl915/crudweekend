@@ -38,13 +38,13 @@ var skipToMyLou = {
         method:"POST",
         contentType:"application/json; charset=utf-8",
         data: JSON.stringify({
-            description:$("#exampleTextarea").val(),
-            latitude:$("#Latitude").val(),
-            longitude:$("#Longitude").val(),
-            visitDate:$("#When").val(),
-            isClean:$("#isClean").val(),
-            rating:1,
-            restroomId:1
+        description:$("#exampleTextarea").val(),
+        latitude:$("#Latitude").val(),
+        longitude:$("#Longitude").val(),
+        visitDate:$("#When").val(),
+        isClean:$("#isClean").val(),
+        rating:RatingData,
+        userId:0
       }),
     success: function(data){
       console.log("DATA SENT",data);
@@ -55,7 +55,7 @@ var skipToMyLou = {
 })});
 /* LOG RATING */
 $('.logo').on("click",function(){
-  var ratingData = $(this).data();
+  RatingData = $(this).data();
 })
 },
 Read: function() {
