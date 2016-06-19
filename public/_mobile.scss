@@ -1,23 +1,55 @@
 @media (min-width: 320px) and (max-width: 767px) {
+html body div.mainContainer {
+  height: 100%;
+  width: 100%;
+}
+.logInPage, .mainPage {
+    width: 80%;
+    margin: 10% auto;
+    padding-top: 8%;
+    border-radius: 5px;
+  }
+  header {
+    height: 5%;
+    }
+//logInPage css
+.logInPage {
+  height: 53%;
+  h2 {
+    font-size: xx-large;
+    padding-top: 0%;
+  }
+    p{
+      font-size: medium;
+  }
+  h2, p {
+    margin-left: 3%;
+    }
+  form.form-inline {
+    width: 62%;
+    margin-left: 21%;
+    margin-top: 10%;
+  }
+  button.signIn {
+    margin-left: 0;
+    margin-right: 8%;
+    margin-top: 5%;
+  }
+  div.form-group {
+    // margin-bottom: 8px;
+    margin-right: 16%;
+    margin-bottom: 2%;
+    margin-top: 9%;
+    }
+  footer {
+    // display: none;
+    }
+}
 
-header {
-      width: 90%;
-  }
-header .fa-3x {
-  font-size: 1.6em;
-  }
-h2, p {
-  margin-left: 3%;
-  }
+// mainPage css
 .socialBoxes {
   margin-right: 3%;
   margin-top: 2%;
-  }
-.logInPage, .mainPage {
-  width: 80%;
-  margin: 10% auto;
-  padding-top: 8%;
-  border-radius: 5px;
   }
 .userInputArea {
   width: 80%;
@@ -32,22 +64,6 @@ h2, p {
   width: 75%;
   margin-left: 13%;
   margin-top: 8%;
-  }
-form.form-inline {
-  width: 80%;
-  margin-left: 12%;
-  margin-top: 13%;
-}
-button.signIn {
-  float: right;
-  background-color: antiquewhite;
-  border-radius: 10px;
-  color: gray;
-  margin-right: 14%;
-  margin-top: 5%;
-    }
-.form-group {
-  margin-bottom: 8px;
   }
 #isClean {
   margin-bottom: 3%;
@@ -69,8 +85,6 @@ button.btn.btn-primary {
   height: 30%;
   margin-left: 10%;
   margin-right: 10%;
-  }
-footer .socialBoxesFooter {
-  display: none;
     }
+
   }
