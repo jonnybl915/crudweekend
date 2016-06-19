@@ -24,7 +24,6 @@ var skipToMyLou = {
       skipToMyLou.Read();
       $('.logInPage').fadeToggle(1000);
       $(".mainPage").removeClass("hidden").toggle();
-      $(".mainPage").fadeToggle(3000);
   },
       error: function(err) {
       console.error("OH CRAP", err);
