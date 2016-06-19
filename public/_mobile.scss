@@ -3,18 +3,16 @@ html body div.mainContainer {
   height: 100%;
   width: 100%;
 }
-.logInPage, .mainPage {
-    width: 80%;
-    margin: 10% auto;
-    padding-top: 8%;
-    border-radius: 5px;
-  }
   header {
     height: 5%;
     }
 //logInPage css
 .logInPage {
   height: 53%;
+  width: 80%;
+  margin: 10% auto;
+  padding-top: 8%;
+  border-radius: 5px;
   h2 {
     font-size: xx-large;
     padding-top: 0%;
@@ -47,44 +45,59 @@ html body div.mainContainer {
 }
 
 // mainPage css
-.socialBoxes {
-  margin-right: 3%;
-  margin-top: 2%;
-  }
-.userInputArea {
-  width: 80%;
-  margin: 5% -1% 0 11%;
-  }
-.form-group-username {
-  width: 75%;
-  margin-left: 13%;
-  margin-top: 20%;
-  }
-.form-group-password {
-  width: 75%;
-  margin-left: 13%;
-  margin-top: 8%;
-  }
-#isClean {
-  margin-bottom: 3%;
-  }
-button.btn.btn-primary {
-  float: right;
-  background-color: antiquewhite;
-  border-radius: 10px;
-  color: gray;
-  margin-right: 1%;
-  margin-top: 0;
-  margin-bottom: 10%;
-  width: 99%;
-  height: 28px;
-  }
-#map {
-  border-radius: 5px;
-  width: 80%;
-  height: 30%;
-  margin-left: 10%;
-  margin-right: 10%;
-    }
+  div.mainPage {
+      width: 80%;
+      margin: 0% auto;
+      border-radius: 5px;
+      height: 92%;
 
+  .socialBoxes {
+    margin-right: 3%;
+    margin-top: 2%;
+      span {
+        font-size: 2em;
+      }
+    }
+    .userInputArea {
+      width: 80%;
+      margin: 5% -1% 0 11%;
+    }
+    .form-group-username {
+      width: 75%;
+      margin-left: 13%;
+      margin-top: 20%;
+    }
+    .form-group-password {
+      width: 75%;
+      margin-left: 13%;
+      margin-top: 8%;
+    }
+    #isClean {
+      margin-bottom: 3%;
+    }
+    button.btn.btn-primary {
+      float: right;
+      border-radius: 10px;
+      margin-right: 1%;
+      margin-top: 0;
+      margin-bottom: 8%;
+      width: 99%;
+      height: 28px;
+    }
+    #map {
+      border-radius: 5px;
+      width: 80%;
+      height: 23%;
+      margin-left: 10%;
+      margin-right: 10%;
+      }
+    fieldset.form-group {
+      margin-bottom: 3%;
+    }
+    footer {
+      h5 {
+      font-size: 10px;
+      }
+    }
   }
+}

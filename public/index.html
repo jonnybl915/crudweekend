@@ -19,11 +19,7 @@
         <!--Log In Screen - First Page-->
 
         <div class="logInPage">
-          <div class="socialBoxes">
-                      <a href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-3x"></span></a>
-                      <a href="https://twitter.com/"><span class="fa fa-twitter-square fa-3x"></span></a>
-                      <a href="https://youtube.com/"><span class="fa fa-youtube-square fa-3x"></span></a>
-                  </div>
+
             <h2>Skip to the Lou</h2>
             <p>-so you don't have to hold it-</p>
             <!--LogIn Form-->
@@ -38,12 +34,20 @@
                 <button class="signIn" type="submit">Sign in</button>
             </form>
         </div>
-      </div><!--Second Page-->
+
+      <!--Second Page-->
+
         <div class="mainPage">
             <header>
-                <h2>Skip to the Lou</h2>
-                <p>-so you don't have to hold it-</p>
-            </header><!--User Input form-->
+              <div class="socialBoxes">
+                  <a href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-3x"></span></a>
+                  <a href="https://twitter.com/"><span class="fa fa-twitter-square fa-3x"></span></a>
+                  <a href="https://youtube.com/"><span class="fa fa-youtube-square fa-3x"></span></a>
+              </div>
+            </header>
+            <h2>Skip to the Lou</h2>
+            <p>-so you don't have to hold it-</p>
+            <!--User Input form-->
             <div class="userInputArea">
                 <form class="trackerForm">
                     <fieldset class="form-group">
@@ -57,39 +61,51 @@
                     </fieldset>
                     <fieldset class="form-group">
                         <select class="form-control" id="isClean">
+                            <option>Clean?</option>
+                            <option>Yep!</option>
+                            <option>I wouldn't try it...</option>
+                      </fieldset>
                             <option value="1">Clean?</option>
                             <option value="2">Yep!</option>
                             <option value="3">I wouldn't try it...</option>
                       <fieldset class="form-group">
                           <textarea class="form-control" id="exampleTextarea" rows="2" placeholder="Comments..."></textarea>
                       </fieldset>
-                    </select> <button class="btn btn-primary" id="Submission" type="submit">Submit</button>
+                    </select>
+                    <h4>Rate this restroom:</h4>
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <button class="btn btn-primary" type="submit">Submit</button>
                     </fieldset>
-                </form>
-            </div>
 
-            <!--Google Stuff-->
-            <div class="" id="map"></div>
-          <script> function initMap() {
+                </form>
+                <!--Google Stuff-->
+                <div id="map"></div>
+        <script>
+          function initMap() {
             var mapDiv = document.getElementById('map');
             var map = new google.maps.Map(mapDiv, {
                 center: {lat: 44.540, lng: -78.546},
                 zoom: 8
             });
-          } </script>
+          }
+        </script>
+            </div>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzzGf415NkDEGMgM4FO6gqSkQVHD_-JZ4&callback=initMap">
     </script>
         </div>
+        </div>
       <footer>
         <h5>
-          CrudWeekend Collaboration Project. Front-End & Back-End. The Iron Yard, 2016
+          CrudWeekend Collaboration Project. The Iron Yard, 2016
         </h5>
-
       </footer>
     </div>
-    <script charset="utf-8" src="node_modules/jquery/dist/jquery.js">
-    </script>
+    <script charset="utf-8" src="node_modules/jquery/dist/jquery.js"></script>
     <script charset="utf-8" src="app.js">
     </script>
 </body>

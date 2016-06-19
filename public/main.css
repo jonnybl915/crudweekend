@@ -11,20 +11,18 @@ html {
       html body .mainContainer div#bg-image {
         height: 100%;
         background-image: url("images/bathroomBackground.jpg"); }
+        html body .mainContainer div#bg-image header {
+          height: 5%; }
       html body .mainContainer h2, html body .mainContainer p {
         text-align: center; }
       html body .mainContainer h2 {
         padding-top: 2%; }
-
-header {
-  height: 20%; }
-
-footer {
-  width: 100%;
-  height: 10%; }
-  footer h5 {
-    text-align: center;
-    vertical-align: middle; }
+      html body .mainContainer footer {
+        width: 100%;
+        height: 10%; }
+        html body .mainContainer footer h5 {
+          text-align: center;
+          vertical-align: middle; }
 
 .logInPage {
   background-color: rgba(100, 149, 244, 0.78);
@@ -41,8 +39,6 @@ footer {
     margin-left: 0%; }
   .logInPage p {
     font-size: x-large; }
-  .logInPage .socialBoxes {
-    display: none; }
   .logInPage form.form-inline {
     text-align: center;
     margin-top: 3%;
@@ -69,48 +65,89 @@ footer {
     background-color: #3B5998;
     border-radius: 10px; }
 
-.mainPage {
+div.mainPage {
   color: #FFF;
-  height: 100%;
-  display: hidden; }
-  .mainPage .socialBoxes {
+  background-color: rgba(100, 149, 244, 0.78);
+  box-shadow: 10px 10px 5px 0px rgba(140, 137, 140, 0.65);
+  width: 80%;
+  margin: 0 auto;
+  height: 90%; }
+  div.mainPage .socialBoxes {
     float: right;
     margin-top: 2%; }
-    .mainPage .socialBoxes .fa-facebook-square {
+    div.mainPage .socialBoxes .fa-facebook-square {
       color: #3b5998;
       top: 0;
       right: .5em; }
-      .mainPage .socialBoxes .fa-facebook-square:hover {
+      div.mainPage .socialBoxes .fa-facebook-square:hover {
         color: #add8e6;
         opacity: .8; }
-    .mainPage .socialBoxes .fa-twitter-square {
+    div.mainPage .socialBoxes .fa-twitter-square {
       color: #00aced;
       top: 0;
       left: -.3em; }
-      .mainPage .socialBoxes .fa-twitter-square:hover {
+      div.mainPage .socialBoxes .fa-twitter-square:hover {
         color: #add8e6;
         opacity: .4; }
-    .mainPage .socialBoxes .fa-youtube-square {
+    div.mainPage .socialBoxes .fa-youtube-square {
       color: #b31217;
       top: 0;
       left: -.2em; }
-      .mainPage .socialBoxes .fa-youtube-square:hover {
+      div.mainPage .socialBoxes .fa-youtube-square:hover {
         color: #ffc0cb;
         opacity: .4; }
+  div.mainPage h2 {
+    font-size: -webkit-xxx-large; }
+  div.mainPage p {
+    font-size: xx-large; }
+  div.mainPage div.userInputArea {
+    width: 30%;
+    margin-left: 11%;
+    margin-right: 0%;
+    margin-top: 5%; }
+  div.mainPage fieldset.form-group {
+    border: gray solid 2px;
+    margin-bottom: 7%; }
+  div.mainPage select#isClean.form-control {
+    border: solid gray 2px; }
+  div.mainPage textarea#exampleTextarea.form-control {
+    border: solid gray 2px; }
+  div.mainPage h4 {
+    color: #FFF;
+    text-decoration: underline;
+    text-align: left; }
+  div.mainPage img {
+    border-radius: 13px;
+    border: solid white 2px; }
+    div.mainPage img:hover {
+      opacity: .8; }
+  div.mainPage button.btn-primary {
+    background-color: #3B5998;
+    color: #FFF;
+    border: #FFF solid 2px;
+    float: right;
+    width: 25%; }
+    div.mainPage button.btn-primary:hover {
+      opacity: .8; }
+  div.mainPage div#map {
+    width: 37%;
+    height: 50%;
+    margin-left: 55%; }
+  div.mainPage h5 {
+    text-align: center; }
 
 @media (min-width: 320px) and (max-width: 767px) {
   html body div.mainContainer {
     height: 100%;
     width: 100%; }
-  .logInPage, .mainPage {
+  header {
+    height: 5%; }
+  .logInPage {
+    height: 53%;
     width: 80%;
     margin: 10% auto;
     padding-top: 8%;
     border-radius: 5px; }
-  header {
-    height: 5%; }
-  .logInPage {
-    height: 53%; }
     .logInPage h2 {
       font-size: xx-large;
       padding-top: 0%; }
@@ -130,35 +167,44 @@ footer {
       margin-right: 16%;
       margin-bottom: 2%;
       margin-top: 9%; }
-  .socialBoxes {
-    margin-right: 3%;
-    margin-top: 2%; }
-  .userInputArea {
+  div.mainPage {
     width: 80%;
-    margin: 5% -1% 0 11%; }
-  .form-group-username {
-    width: 75%;
-    margin-left: 13%;
-    margin-top: 20%; }
-  .form-group-password {
-    width: 75%;
-    margin-left: 13%;
-    margin-top: 8%; }
-  #isClean {
-    margin-bottom: 3%; }
-  button.btn.btn-primary {
-    float: right;
-    background-color: antiquewhite;
-    border-radius: 10px;
-    color: gray;
-    margin-right: 1%;
-    margin-top: 0;
-    margin-bottom: 10%;
-    width: 99%;
-    height: 28px; }
-  #map {
+    margin: 0% auto;
     border-radius: 5px;
-    width: 80%;
-    height: 30%;
-    margin-left: 10%;
-    margin-right: 10%; } }
+    height: 92%; }
+    div.mainPage .socialBoxes {
+      margin-right: 3%;
+      margin-top: 2%; }
+      div.mainPage .socialBoxes span {
+        font-size: 2em; }
+    div.mainPage .userInputArea {
+      width: 80%;
+      margin: 5% -1% 0 11%; }
+    div.mainPage .form-group-username {
+      width: 75%;
+      margin-left: 13%;
+      margin-top: 20%; }
+    div.mainPage .form-group-password {
+      width: 75%;
+      margin-left: 13%;
+      margin-top: 8%; }
+    div.mainPage #isClean {
+      margin-bottom: 3%; }
+    div.mainPage button.btn.btn-primary {
+      float: right;
+      border-radius: 10px;
+      margin-right: 1%;
+      margin-top: 0;
+      margin-bottom: 8%;
+      width: 99%;
+      height: 28px; }
+    div.mainPage #map {
+      border-radius: 5px;
+      width: 80%;
+      height: 23%;
+      margin-left: 10%;
+      margin-right: 10%; }
+    div.mainPage fieldset.form-group {
+      margin-bottom: 3%; }
+    div.mainPage footer h5 {
+      font-size: 10px; } }
