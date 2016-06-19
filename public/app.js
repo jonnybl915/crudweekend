@@ -1,12 +1,25 @@
+/* Initialize map at the beginning of the page */
+function initMap() {
+  var mapDiv = document.getElementById('map');
+  var map = new google.maps.Map(mapDiv, {
+      center: {lat: 44.540, lng: -78.546},
+      zoom: 8
+  });
+}
+
 $(document).ready(function(){
-  logInPage.events();
+  skipToMyLou.events();
 })
 
-var logInPage = {
+var skipToMyLou = {
 
   events: function() {
   $(".mainPage").toggle();
+  /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
+    if(($("#Username").val()||$('#Password').val())===null){
+      return false;
+    }
     event.preventDefault();
     $.ajax({
       url:"/login",
@@ -16,24 +29,23 @@ var logInPage = {
           username:$("#Username").val(),
           password:$('#Password').val(),
         }),
-      success: function(data) { if(1){
+      success: function(data) {
       console.log("This worked", data);
-      $('.logInPage').toggle();
-      $(".mainPage").toggle();
-    }
-      },
-      error: function(err) { if(-1){
-        console.error("OH CRAP", err);
+      $('.logInPage').fadeToggle(3000);
+      $(".mainPage").fadeToggle(3000);
+  },
+      error: function(err) {
+      console.error("OH CRAP", err);
       alert("HOLD IT!");
-    }
       }
     })
   });
+
 },
 Read: function() {
   $.ajax({
     method:"GET",
-    url:"/login",
+    url:"login",
   success:function(data) {
     console.log(data);
     data = JSON.parse(data)
@@ -41,9 +53,4 @@ Read: function() {
   error:function(err) {
     console.err("Oh SHit!!!",data)
   }
-  })
-}
-}
-var mainPage = {
-
-}
+})}}
