@@ -11,8 +11,9 @@ public class Restroom {
     boolean isClean;
     Integer rating;
     Integer restroomId;
+    Integer userId;
 
-    public Restroom(String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating,  Integer restroomId) {
+    public Restroom(String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer restroomId, Integer UserId) {
 
         this.description = description;
         this.latitude = latitude;
@@ -21,8 +22,8 @@ public class Restroom {
         this.isClean = isClean;
         this.rating = rating;
         this.restroomId = restroomId;
+        this.userId = userId;
     }
-
 
     public Restroom() {
     }
@@ -59,6 +60,13 @@ public class Restroom {
         this.visitDate = visitDate;
     }
 
+    public boolean isClean() {
+        return isClean;
+    }
+
+    public void setClean(boolean clean) {
+        isClean = clean;
+    }
 
     public Integer getRating() {
         return rating;
@@ -72,7 +80,15 @@ public class Restroom {
         return restroomId;
     }
 
-    public void setId(Integer restroomId) {
+    public void setRestroomId(Integer restroomId) {
         this.restroomId = restroomId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

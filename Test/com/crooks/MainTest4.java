@@ -51,7 +51,7 @@ public class MainTest4 {
     public void testUpdateRestroom() throws SQLException {
         Connection conn = startConnection();
         Main.insertRestroom(conn, "dirty af", 10.88, -10.99, "3/05/16", false, 1, 1);
-        Main.updateRestroom(conn, "GREAT", 10.33, -9.33, "2/2/12", true, 5, 1);
+        Main.updateRestroom(conn, "GREAT", 10.33, -9.33, "2/2/12", true, 5, 1, 1);
         Restroom test1;
         Main.selectRestroom(conn, 1);
         ArrayList<Restroom> testList = Main.selectRestrooms(conn);
