@@ -133,6 +133,8 @@ div.mainPage {
     width: 37%;
     height: 50%;
     margin-left: 55%; }
+  div.mainPage h5 {
+    text-align: center; }
 
 @media (min-width: 320px) and (max-width: 767px) {
   html body div.mainContainer {
