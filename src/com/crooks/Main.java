@@ -135,7 +135,7 @@ public class Main {
                     String username = session.attribute("username");
                     if(username.isEmpty()) {
                         halt("You cannot leave any text fields blank!! please go back...");
-                        return "success";
+                        return "error";
                     }
                     if(username ==null) {
                         String body = request.body();
