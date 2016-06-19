@@ -1,6 +1,6 @@
 $(document).ready(function(){
   skipToMyLou.events();
-  $('.mainPage').addClass("hidden").toggle();
+  $('.mainPage').addClass("hidden");
 })
 
 var skipToMyLou = {
@@ -22,8 +22,9 @@ var skipToMyLou = {
       success: function(data) {
       console.log("This worked", data);
       skipToMyLou.Read();
-      $('.logInPage').fadeToggle(3000);
+      $('.logInPage').fadeToggle(1000);
       $(".mainPage").removeClass("hidden").toggle();
+      $(".mainPage").fadeToggle(3000);
   },
       error: function(err) {
       console.error("OH CRAP", err);
@@ -44,6 +45,12 @@ var skipToMyLou = {
         longitude:$("#Longitude").val(),
         visitDate:$("#When").val()
       }),
+    success: function(data){
+      console.log("DATA SENT",data);
+    },
+      error:function(err) {
+      console.error("OOOPS!!!",err)
+      }
 })});
 
 },
@@ -54,6 +61,13 @@ Read: function() {
   success:function(data) {
     console.log(data);
     data = JSON.parse(data)
+    data.forEach(function(item){
+      var mark = new google.maps.Marker({
+        position: {latitude:item.Latitude, longitude:item.Longitude },
+        map:$('.map'),
+        title:item.description
+      });
+    })
   },
   error:function(err) {
     console.err("Oh SHit!!!",data)
