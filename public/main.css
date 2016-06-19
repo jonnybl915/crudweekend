@@ -71,10 +71,12 @@ div.mainPage {
   box-shadow: 10px 10px 5px 0px rgba(140, 137, 140, 0.65);
   width: 80%;
   margin: 0 auto;
-  height: 90%; }
+  height: 90%;
+  border-radius: 10px; }
   div.mainPage .socialBoxes {
     float: right;
-    margin-top: 2%; }
+    margin-top: 2%;
+    margin-right: 3%; }
     div.mainPage .socialBoxes .fa-facebook-square {
       color: #3b5998;
       top: 0;
@@ -130,9 +132,11 @@ div.mainPage {
     div.mainPage button.btn-primary:hover {
       opacity: .8; }
   div.mainPage div#map {
-    width: 37%;
-    height: 50%;
-    margin-left: 55%; }
+    position: absolute;
+    width: 35%;
+    height: 57%;
+    margin-left: 41%;
+    bottom: -64%; }
   div.mainPage h5 {
     text-align: center; }
 

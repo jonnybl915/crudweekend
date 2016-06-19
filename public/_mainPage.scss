@@ -5,10 +5,12 @@ div.mainPage {
     width: 80%;
     margin: 0 auto;
     height: 90%;
+    border-radius: 10px;
 
     .socialBoxes {
       float: right;
       margin-top: 2%;
+      margin-right: 3%;
 
       .fa-facebook-square {
         color: #3b5998;
@@ -83,9 +85,11 @@ div.mainPage {
         }
     }
     div#map {
-      width: 37%;
-      height: 50%;
-      margin-left: 55%;
+      position: absolute;
+      width: 35%;
+      height: 57%;
+      margin-left: 41%;
+      bottom: -64%;
     }
     h5 {
       text-align: center;
