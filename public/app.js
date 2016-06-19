@@ -5,8 +5,7 @@ $(document).ready(function(){
 
 var skipToMyLou = {
   events: function() {
-
-
+    var RatingData=0;
   // $(".mainPage").toggle();
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
@@ -21,10 +20,9 @@ var skipToMyLou = {
         }),
       success: function(data) {
       console.log("This worked", data);
-      skipToMyLou.Read();
       $('.logInPage').fadeToggle(1000);
       $(".mainPage").removeClass("hidden").toggle();
-      $('.mainPage').fadeToggle(3000);
+      $(".mainPage").fadeToggle(3000)
   },
       error: function(err) {
       console.error("OH CRAP", err);
@@ -40,13 +38,25 @@ var skipToMyLou = {
         method:"POST",
         contentType:"application/json; charset=utf-8",
         data: JSON.stringify({
-        description:$("exampleTextarea").val(),
+        description:$("#exampleTextarea").val(),
         latitude:$("#Latitude").val(),
         longitude:$("#Longitude").val(),
-        visitDate:$("#When").val()
+        visitDate:$("#When").val(),
+        isClean:$("#isClean").val(),
+        rating:0,
+        userId:0
       }),
+    success: function(data){
+      console.log("DATA SENT",data);
+    },
+      error:function(err) {
+      console.error("OOOPS!!!",err)
+      }
 })});
-
+/* LOG RATING */
+$('.logo').on("click",function(){
+  var ratingData = $(this).data();
+})
 },
 Read: function() {
   $.ajax({
@@ -55,6 +65,13 @@ Read: function() {
   success:function(data) {
     console.log(data);
     data = JSON.parse(data)
+    data.forEach(function(item){
+      var mark = new google.maps.Marker({
+        position: {latitude:item.Latitude, longitude:item.Longitude },
+        map:$('.map'),
+        title:item.description
+      });
+    })
   },
   error:function(err) {
     console.err("Oh SHit!!!",data)
