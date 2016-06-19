@@ -9,17 +9,17 @@ function initMap() {
 
 $(document).ready(function(){
   skipToMyLou.events();
+  $('.mainPage').addClass("hidden");
 })
 
 var skipToMyLou = {
-
   events: function() {
-  $(".mainPage").toggle();
+  //$(".mainPage").toggle();
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
-    if(($("#Username").val()||$('#Password').val())===null){
-      return false;
-    }
+//    if(($("#Username").val()||$('#Password').val())!==null){
+//      return false;
+//    }
     event.preventDefault();
     $.ajax({
       url:"/login",
@@ -32,7 +32,7 @@ var skipToMyLou = {
       success: function(data) {
       console.log("This worked", data);
       $('.logInPage').fadeToggle(3000);
-      $(".mainPage").fadeToggle(3000);
+      $(".mainPage").removeClass("hidden");
   },
       error: function(err) {
       console.error("OH CRAP", err);
