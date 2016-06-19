@@ -1,3 +1,4 @@
+var RatingData=0;
 var clean = $('#isClean option')
 $(document).ready(function(){
   skipToMyLou.events();
@@ -6,11 +7,6 @@ $(document).ready(function(){
 
 var skipToMyLou = {
   events: function() {
-    var RatingData=0;
- // if (clean.val() === "Clean?") {
- //   clean = true;
- // }
- // else{clean = false}
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
     event.preventDefault();
@@ -52,6 +48,7 @@ var skipToMyLou = {
         visitDate:$("#When").val(),
         isClean:clean,
         rating:RatingData,
+        userId:1
       }),
     success: function(data){
       console.log("DATA SENT",data);
@@ -76,14 +73,15 @@ Read: function() {
     console.log(data);
     data = JSON.parse(data)
     data.forEach(function(item){
+      console.log(item);
       var mark = new google.maps.Marker({
-        position: {latitude:item.Latitude, longitude:item.Longitude },
-        map:$('.map'),
+        position: {latitude:item.latitude, longitude:item.longitude },
+        map:$('#map'),
         title:item.description
       });
     })
   },
   error:function(err) {
-    console.err("Oh SHit!!!",data)
+    console.log("Oh SHit!!!",err)
   }
 })}}
