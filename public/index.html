@@ -61,36 +61,36 @@
                     </fieldset>
                     <fieldset class="form-group">
                         <select class="form-control" id="isClean">
+                            <option>Clean?</option>
+                            <option>Yep!</option>
+                            <option>I wouldn't try it...</option>
                       </fieldset>
-                            <option value="1">Clean?</option>
-                            <option value="2">Yep!</option>
-                            <option value="3">I wouldn't try it...</option>
                       <fieldset class="form-group">
                           <textarea class="form-control" id="exampleTextarea" rows="2" placeholder="Comments..."></textarea>
                       </fieldset>
                     </select>
-                    <h4>Rate this restroom:</h4>
-                    <img src="images/toiletLogoSmall.jpg" class=logo data-id="1" />
-                    <img src="images/toiletLogoSmall.jpg" class=logo data-id="2" />
-                    <img src="images/toiletLogoSmall.jpg" class=logo data-id="3" />
-                    <img src="images/toiletLogoSmall.jpg" class=logo data-id="4" />
-                    <img src="images/toiletLogoSmall.jpg" class=logo data-id="5" />
+                  </form>
+              </div>
+                    <div class="restroomRating">
+                      <h4>Rate this restroom:</h4>
+                      <img src="images/toiletLogoSmall.jpg" class="logo" data-id="1"  />
+                      <img src="images/toiletLogoSmall.jpg" class="logo" data-id="2" />
+                      <img src="images/toiletLogoSmall.jpg" class="logo" data-id="3" />
+                      <img src="images/toiletLogoSmall.jpg" class="logo" data-id="4" />
+                      <img src="images/toiletLogoSmall.jpg" class="logo" data-id="5" />
+                      </div>
                     <button class="btn btn-primary" type="submit">Submit</button>
-                    </fieldset>
-
-                </form>
                 <!--Google Stuff-->
-                <div id="map"></div>
-        <script>
-          function initMap() {
-            var mapDiv = document.getElementById('map');
-            var map = new google.maps.Map(mapDiv, {
-                center: {lat: 44.540, lng: -78.546},
-                zoom: 8
-            });
-          }
-        </script>
-            </div>
+            <div id="map"></div>
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: {lat: 44.540, lng: -78.546},
+            zoom: 8
+        });
+      }
+    </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzzGf415NkDEGMgM4FO6gqSkQVHD_-JZ4&callback=initMap">
     </script>
