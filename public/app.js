@@ -1,3 +1,4 @@
+
 var RatingData=0;
 var clean = $('#isClean option')
 $(document).ready(function(){
@@ -28,7 +29,7 @@ var skipToMyLou = {
       console.error("OH CRAP", err);
       alert("HOLD IT!");
       }
-    });
+    })
   });
   /*SUBMIT TOILET INFORMATION */
   $('.btn-primary').on("click",function(event){
