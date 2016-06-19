@@ -52,7 +52,6 @@ var skipToMyLou = {
         visitDate:$("#When").val(),
         isClean:clean,
         rating:RatingData,
-        userId:1
       }),
     success: function(data){
       console.log("DATA SENT",data);
