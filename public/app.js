@@ -42,9 +42,9 @@ var skipToMyLou = {
         latitude:$("#Latitude").val(),
         longitude:$("#Longitude").val(),
         visitDate:$("#When").val(),
-        isClean:$("#isClean").val(),
-        rating:RatingData,
-        userId:0
+        isClean:true,
+        rating:1,
+        userId:1
       }),
     success: function(data){
       console.log("DATA SENT",data);
