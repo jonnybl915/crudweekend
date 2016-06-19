@@ -133,6 +133,10 @@ public class Main {
                 (request, response) -> {
                     Session session = request.session();
                     String username = session.attribute("username");
+                    if(username.isEmpty()) {
+                        halt("You cannot leave any text fields blank!! please go back...");
+                        return "success";
+                    }
                     if(username ==null) {
                         String body = request.body();
                         JsonParser parser = new JsonParser();
@@ -144,11 +148,11 @@ public class Main {
                         } else if (!user.password.equals(loguser.password)) {
                             halt("Incorrect Username/Password Combination.\n" +
                                     "Please Go Back");
-                            return false;
+                            return "error";
                         }
                         session.attribute("username", loguser.username);
                     }
-                    return "Success, this Worked!"; //or throw error
+                    return "success"; //or throw error
                 }
         );
         Spark.get(
