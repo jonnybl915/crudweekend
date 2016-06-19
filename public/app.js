@@ -31,20 +31,20 @@ var skipToMyLou = {
     })
   });
   /*SUBMIT TOILET INFORMATION */
-  $('Submission').on("click",function(event){
+  $('.btn-primary').on("click",function(event){
   event.preventDefault();
    $.ajax({
         url:"/skipToTheLoo",
         method:"POST",
         contentType:"application/json; charset=utf-8",
         data: JSON.stringify({
-        description:$("#exampleTextarea").val(),
-        latitude:$("#Latitude").val(),
-        longitude:$("#Longitude").val(),
-        visitDate:$("#When").val(),
-        isClean:$("#isClean").val(),
-        rating:0,
-        userId:0
+            description:$("#exampleTextarea").val(),
+            latitude:$("#Latitude").val(),
+            longitude:$("#Longitude").val(),
+            visitDate:$("#When").val(),
+            isClean:$("#isClean").val(),
+            rating:1,
+            restroomId:1
       }),
     success: function(data){
       console.log("DATA SENT",data);
