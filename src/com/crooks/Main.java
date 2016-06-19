@@ -150,7 +150,7 @@ public class Main {
                         }
                         session.attribute("username", loguser.username);
                     }
-                    return 1; //or throw error
+                    return 1;      //or throw error
                 }
         );
         Spark.get(
