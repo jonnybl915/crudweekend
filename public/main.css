@@ -67,9 +67,11 @@ html {
 
 div.mainPage {
   color: #FFF;
-  height: 100%;
   background-color: rgba(100, 149, 244, 0.78);
-  box-shadow: 10px 10px 5px 0px rgba(140, 137, 140, 0.65); }
+  box-shadow: 10px 10px 5px 0px rgba(140, 137, 140, 0.65);
+  width: 80%;
+  margin: 0 auto;
+  height: 90%; }
   div.mainPage .socialBoxes {
     float: right;
     margin-top: 2%; }
@@ -94,17 +96,43 @@ div.mainPage {
       div.mainPage .socialBoxes .fa-youtube-square:hover {
         color: #ffc0cb;
         opacity: .4; }
+  div.mainPage h2 {
+    font-size: -webkit-xxx-large; }
+  div.mainPage p {
+    font-size: xx-large; }
+  div.mainPage div.userInputArea {
+    width: 30%;
+    margin-left: 11%;
+    margin-right: 0%;
+    margin-top: 5%; }
   div.mainPage fieldset.form-group {
     border: gray solid 2px;
-    margin-bottom: 3%; }
+    margin-bottom: 7%; }
   div.mainPage select#isClean.form-control {
     border: solid gray 2px; }
   div.mainPage textarea#exampleTextarea.form-control {
     border: solid gray 2px; }
+  div.mainPage h4 {
+    color: #FFF;
+    text-decoration: underline;
+    text-align: left; }
+  div.mainPage img {
+    border-radius: 13px;
+    border: solid white 2px; }
+    div.mainPage img:hover {
+      opacity: .8; }
   div.mainPage button.btn-primary {
     background-color: #3B5998;
     color: #FFF;
-    border: white solid 2px; }
+    border: #FFF solid 2px;
+    float: right;
+    width: 25%; }
+    div.mainPage button.btn-primary:hover {
+      opacity: .8; }
+  div.mainPage div#map {
+    width: 37%;
+    height: 50%;
+    margin-left: 55%; }
 
 @media (min-width: 320px) and (max-width: 767px) {
   html body div.mainContainer {
@@ -168,8 +196,6 @@ div.mainPage {
       margin-bottom: 8%;
       width: 99%;
       height: 28px; }
-      div.mainPage button.btn.btn-primary:hover {
-        opacity: .8; }
     div.mainPage #map {
       border-radius: 5px;
       width: 80%;

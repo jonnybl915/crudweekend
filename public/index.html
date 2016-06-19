@@ -67,25 +67,31 @@
                       <fieldset class="form-group">
                           <textarea class="form-control" id="exampleTextarea" rows="2" placeholder="Comments..."></textarea>
                       </fieldset>
-                    </select> <button class="btn btn-primary" type="submit">Submit</button>
-                    <!-- </fieldset> -->
-                    </select> <button class="btn btn-primary" id="Submission" type="submit">Submit</button>
+                    </select>
+                    <h4>Rate this restroom:</h4>
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <img src="images/toiletLogoSmall.jpg" alt="logo" />
+                    <button class="btn btn-primary" type="submit">Submit</button>
                     </fieldset>
 
                 </form>
+                <!--Google Stuff-->
+                <div id="map"></div>
+        <script>
+          function initMap() {
+            var mapDiv = document.getElementById('map');
+            var map = new google.maps.Map(mapDiv, {
+                center: {lat: 44.540, lng: -78.546},
+                zoom: 8
+            });
+          }
+        </script>
             </div>
 
-            <!--Google Stuff-->
-            <div id="map"></div>
-    <script>
-      function initMap() {
-        var mapDiv = document.getElementById('map');
-        var map = new google.maps.Map(mapDiv, {
-            center: {lat: 44.540, lng: -78.546},
-            zoom: 8
-        });
-      }
-    </script>
+
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzzGf415NkDEGMgM4FO6gqSkQVHD_-JZ4&callback=initMap">
     </script>
