@@ -1,6 +1,6 @@
 $(document).ready(function(){
   skipToMyLou.events();
-  $('.mainPage').addClass("hidden").toggle();
+  $('.mainPage').addClass("hidden");
 })
 
 var skipToMyLou = {
@@ -22,8 +22,9 @@ var skipToMyLou = {
       success: function(data) {
       console.log("This worked", data);
       skipToMyLou.Read();
-      $('.logInPage').fadeToggle(3000);
+      $('.logInPage').fadeToggle(1000);
       $(".mainPage").removeClass("hidden").toggle();
+      $('.mainPage').fadeToggle(3000);
   },
       error: function(err) {
       console.error("OH CRAP", err);
