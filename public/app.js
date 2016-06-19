@@ -42,9 +42,9 @@ var skipToMyLou = {
         latitude:$("#Latitude").val(),
         longitude:$("#Longitude").val(),
         visitDate:$("#When").val(),
-        isClean:$("#isClean").val(),
+        isClean:true,
         rating:RatingData,
-        userId:0
+        // userId:1
       }),
     success: function(data){
       console.log("DATA SENT",data);
@@ -55,7 +55,8 @@ var skipToMyLou = {
 })});
 /* LOG RATING */
 $('.logo').on("click",function(){
-  RatingData = $(this).data();
+  DataFields = $(this).data();
+  RatingData =DataFields.id
 })
 },
 Read: function() {
