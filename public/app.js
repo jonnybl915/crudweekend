@@ -55,7 +55,8 @@ var skipToMyLou = {
 })});
 /* LOG RATING */
 $('.logo').on("click",function(){
-  RatingData = $(this).data();
+  DataFields = $(this).data();
+  RatingData =DataFields.id
 })
 },
 Read: function() {
