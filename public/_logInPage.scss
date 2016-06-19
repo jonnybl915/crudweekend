@@ -1,8 +1,49 @@
-h2 {
-  padding-top: 0%;
-}
 .logInPage {
-  background-color: cadetblue;
+  background-color: rgba(100, 149, 244, .78);
+  box-shadow: 10px 10px 5px 0px rgba(140,137,140,0.65);
   color: #FFF;
-  height: 100%;
+  height: 50%;
+  width: 50%;
+  border-radius: 84px;
+  margin-left: 25%;
+
+  h2 {
+    text-align: center;
+    font-size: -webkit-xxx-large;
+    padding-top: 2%;
+    margin-left: 0%;
+  }
+  p {
+    font-size: x-large;
+  }
+  form.form-inline {
+    text-align: center;
+    margin-top: 3%;
+    width: 35%;
+    height: 47%;
+    margin-left: 34%;
+  }
+  div.form-group {
+    margin-right: 16%;
+    margin-bottom: 2%;
+    margin-top: 10%;
+  }
+  input#Username.form-control {
+    width: 112%;
+    border: solid gray 2px;
+  }
+  input#Password.form-control {
+    margin-left: 1%;
+    width: 112%;
+    border: solid gray 2px;
+  }
+  button.signIn {
+    width: 66%;
+    margin-top: 7%;
+    color: #FFF;
+    margin-left: -5%;
+    margin-bottom: 12%;
+    background-color: #3B5998;
+    border-radius: 10px;
+  }
 }

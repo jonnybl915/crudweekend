@@ -1,19 +1,93 @@
-.mainPage {
-    background-color: cadetblue;
+div.mainPage {
     color: #FFF;
-    height: 100%;
-    display:hidden;
+    background-color: rgba(100, 149, 244, .78);
+    box-shadow: 10px 10px 5px 0px rgba(140,137,140,0.65);
+    width: 80%;
+    margin: 0 auto;
+    height: 90%;
+
+    .socialBoxes {
+      float: right;
+      margin-top: 2%;
+
+      .fa-facebook-square {
+        color: #3b5998;
+        top: 0;
+        right: .5em;
+          &:hover {
+            color: #add8e6;
+            opacity: .8;
+          }
+        }
+      .fa-twitter-square {
+      color: #00aced;
+      top: 0;
+      left: -.3em;
+        &:hover {
+          color: #add8e6;
+          opacity: .4;
+          }
+        }
+      .fa-youtube-square {
+      color: #b31217;
+      top: 0;
+      left: -.2em;
+        &:hover {
+          color: #ffc0cb;
+          opacity: .4;
+        }
+      }
+    }
+    h2 {
+      font-size: -webkit-xxx-large;
+    }
+    p{
+      font-size: xx-large;
+    }
+    div.userInputArea {
+      width: 30%;
+      margin-left: 11%;
+      margin-right: 0%;
+      margin-top: 5%;
+    }
+    fieldset.form-group {
+      border: gray solid 2px;
+      margin-bottom: 7%;
+    }
+    select#isClean.form-control{
+      border: solid gray 2px;
+    }
+    textarea#exampleTextarea.form-control{
+      border: solid gray 2px;
+    }
+    h4  {
+      color: #FFF;
+      text-decoration: underline;
+      text-align: left;
+    }
+    img {
+      border-radius: 13px;
+      border: solid white 2px;
+        &:hover{
+          opacity: .8;
+        }
+    }
+    button.btn-primary {
+      background-color: #3B5998;
+      color: #FFF;
+      border: #FFF solid 2px;
+      float: right;
+      width: 25%;
+        &:hover{
+          opacity: .8;
+        }
+    }
+    div#map {
+      width: 37%;
+      height: 50%;
+      margin-left: 55%;
+    }
+    h5 {
+      text-align: center;
+    }
 }
-// google map stuff
-
-// <style type="text/css">
-//   html, body { height: 100%; margin: 0; padding: 0; }
-//   #map { height: 100%; }
-// </style>
-
-// map = new google.maps.Map(document.getElementById('map'), {
-//   center: {lat: -34.397, lng: 150.644},
-//   zoom: 8
-// });
-
-// map = new google.maps.Map(document.getElementById("map"), {...});
