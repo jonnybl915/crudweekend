@@ -1,3 +1,4 @@
+var clean = $('#isClean option')
 $(document).ready(function(){
   skipToMyLou.events();
   $('.mainPage').addClass("hidden");
@@ -6,7 +7,10 @@ $(document).ready(function(){
 var skipToMyLou = {
   events: function() {
     var RatingData=0;
-  // $(".mainPage").toggle();
+ // if (clean.val() === "Clean?") {
+ //   clean = true;
+ // }
+ // else{clean = false}
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
     event.preventDefault();
@@ -28,11 +32,15 @@ var skipToMyLou = {
       console.error("OH CRAP", err);
       alert("HOLD IT!");
       }
-    })
+    });
   });
   /*SUBMIT TOILET INFORMATION */
   $('.btn-primary').on("click",function(event){
   event.preventDefault();
+   if ($('#isClean').val() === "Yep!") {
+      clean = true;
+    }
+    else{clean = false}
    $.ajax({
         url:"/skipToTheLoo",
         method:"POST",
@@ -42,9 +50,8 @@ var skipToMyLou = {
         latitude:$("#Latitude").val(),
         longitude:$("#Longitude").val(),
         visitDate:$("#When").val(),
-        isClean:true,
-        rating:1,
-        userId:1
+        isClean:clean,
+        rating:RatingData,
       }),
     success: function(data){
       console.log("DATA SENT",data);
@@ -57,7 +64,9 @@ var skipToMyLou = {
 $('.logo').on("click",function(){
   DataFields = $(this).data();
   RatingData =DataFields.id
-})
+  $(this).css("border-color","red")
+});
+
 },
 Read: function() {
   $.ajax({
