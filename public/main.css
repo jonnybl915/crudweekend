@@ -119,16 +119,20 @@ div.mainPage {
   div.mainPage textarea#exampleTextarea.form-control {
     border: solid gray 2px; }
   div.mainPage div.restroomRating {
-    width: 32%;
+    width: 28%;
     margin-left: 12%;
-    margin-right: 0; }
+    margin-right: 0;
+    background-color: lightgray;
+    border-radius: 16px;
+    border: gray solid 2px; }
   div.mainPage h4 {
     color: #FFF;
     text-decoration: underline;
-    text-align: left; }
+    text-align: center; }
   div.mainPage img {
     border-radius: 13px;
-    border: solid white 2px; }
+    border: solid white 2px;
+    margin-left: 5%; }
     div.mainPage img:hover {
       background: gray;
       opacity: .5;
