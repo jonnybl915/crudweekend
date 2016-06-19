@@ -45,6 +45,7 @@ var skipToMyLou = {
         isClean:true,
         rating:1,
         userId:1
+
       }),
     success: function(data){
       console.log("DATA SENT",data);
