@@ -1,10 +1,6 @@
-/* Initialize map at the beginning of the page */
-
-
 $(document).ready(function(){
   skipToMyLou.events();
-  initMap();
-  $('.mainPage').addClass("hidden");
+  $('.mainPage').addClass("hidden").toggle();
 })
 
 var skipToMyLou = {
@@ -25,8 +21,9 @@ var skipToMyLou = {
         }),
       success: function(data) {
       console.log("This worked", data);
+      skipToMyLou.Read();
       $('.logInPage').fadeToggle(3000);
-      $(".mainPage").removeClass("hidden");
+      $(".mainPage").removeClass("hidden").toggle();
   },
       error: function(err) {
       console.error("OH CRAP", err);
@@ -53,7 +50,7 @@ var skipToMyLou = {
 Read: function() {
   $.ajax({
     method:"GET",
-    url:"login",
+    url:"/skipToTheLoo",
   success:function(data) {
     console.log(data);
     data = JSON.parse(data)
