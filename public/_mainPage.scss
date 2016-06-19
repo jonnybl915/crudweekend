@@ -1,8 +1,40 @@
 .mainPage {
-    background-color: cadetblue;
     color: #FFF;
     height: 100%;
     display:hidden;
+
+    .socialBoxes {
+      float: right;
+      margin-top: 2%;
+
+      .fa-facebook-square {
+        color: #3b5998;
+        top: 0;
+        right: .5em;
+        &:hover {
+          color: #add8e6;
+          opacity: .8;
+          }
+        }
+      .fa-twitter-square {
+      color: #00aced;
+      top: 0;
+      left: -.3em;
+        &:hover {
+          color: #add8e6;
+          opacity: .4;
+          }
+        }
+      .fa-youtube-square {
+      color: #b31217;
+      top: 0;
+      left: -.2em;
+        &:hover {
+          color: #ffc0cb;
+          opacity: .4;
+        }
+      }
+    }
 }
 // google map stuff
 
