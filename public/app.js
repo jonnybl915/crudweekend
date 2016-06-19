@@ -18,6 +18,9 @@ var skipToMyLou = {
 
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
+    if(($("#Username").val()||$('#Password').val())===null){
+      return false;
+    }
     event.preventDefault();
     $.ajax({
       url:"/login",
@@ -27,11 +30,10 @@ var skipToMyLou = {
           username:$("#Username").val(),
           password:$('#Password').val(),
         }),
-      success: function(data) { if(username && password !== null) {
+      success: function(data) {
       console.log("This worked", data);
       $('.logInPage').fadeToggle(3000);
       $(".mainPage").fadeToggle(3000);
-    }
   },
       error: function(err) {
         console.error("OH CRAP", err);
