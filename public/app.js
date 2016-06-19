@@ -31,7 +31,7 @@ var skipToMyLou = {
     })
   });
   /*SUBMIT TOILET INFORMATION */
-  $('Submission').on("click",function(event){
+  $('.btn-primary').on("click",function(event){
   event.preventDefault();
    $.ajax({
         url:"/skipToTheLoo",
@@ -43,7 +43,7 @@ var skipToMyLou = {
         longitude:$("#Longitude").val(),
         visitDate:$("#When").val(),
         isClean:$("#isClean").val(),
-        rating:0,
+        rating:RatingData,
         userId:0
       }),
     success: function(data){
@@ -55,7 +55,7 @@ var skipToMyLou = {
 })});
 /* LOG RATING */
 $('.logo').on("click",function(){
-  var ratingData = $(this).data();
+  RatingData = $(this).data();
 })
 },
 Read: function() {
