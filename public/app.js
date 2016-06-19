@@ -15,7 +15,7 @@ var skipToMyLou = {
 
   events: function() {
 
-  // $(".mainPage").toggle();
+  $(".mainPage").toggle();
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
     if(($("#Username").val()||$('#Password').val())===null){
