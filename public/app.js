@@ -1,4 +1,3 @@
-var clean = $('#isClean option')
 $(document).ready(function(){
   skipToMyLou.events();
   $('.mainPage').addClass("hidden");
@@ -7,10 +6,7 @@ $(document).ready(function(){
 var skipToMyLou = {
   events: function() {
     var RatingData=0;
- // if (clean.val() === "Clean?") {
- //   clean = true;
- // }
- // else{clean = false}
+
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
     event.preventDefault();
@@ -32,7 +28,7 @@ var skipToMyLou = {
       console.error("OH CRAP", err);
       alert("HOLD IT!");
       }
-    });
+    })
   });
   /*SUBMIT TOILET INFORMATION */
   $('.btn-primary').on("click",function(event){
