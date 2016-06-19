@@ -1,20 +1,17 @@
 /* Initialize map at the beginning of the page */
-function initMap() {
-  var mapDiv = document.getElementById('map');
-  var map = new google.maps.Map(mapDiv, {
-      center: {lat: 44.540, lng: -78.546},
-      zoom: 8
-  });
-}
+
 
 $(document).ready(function(){
   skipToMyLou.events();
+  initMap();
   $('.mainPage').addClass("hidden");
 })
 
 var skipToMyLou = {
   events: function() {
-  //$(".mainPage").toggle();
+
+
+  // $(".mainPage").toggle();
   /* USER NAME AND PASSWORD */
   $('.signIn').on("click", function(event){
     event.preventDefault();
