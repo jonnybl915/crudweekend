@@ -43,7 +43,7 @@ var skipToMyLou = {
         longitude:$("#Longitude").val(),
         visitDate:$("#When").val(),
         isClean:true,
-        rating:RatingData,
+        rating:1,
         userId:1
       }),
     success: function(data){

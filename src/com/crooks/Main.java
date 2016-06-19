@@ -77,7 +77,8 @@ public class Main {
             String visitDate = results.getString("visitDate");
             boolean isClean = results.getBoolean("isClean");
             Integer rating = results.getInt("rating");
-            return new Restroom(description,latitude,longitude,visitDate,isClean,rating,restroomID);
+            Integer userId = results.getInt("userId");
+            return new Restroom(description,latitude,longitude,visitDate,isClean,rating,restroomID, userId);
         }
         return null;
     }
@@ -95,15 +96,16 @@ public class Main {
             String visitDate = results.getString("restroomLog.visitDate");
             boolean isClean = results.getBoolean("restroomLog.isClean");
             Integer rating = results.getInt("restroomLog.rating");
+            Integer restroomId = results.getInt("restroomLog.restroomId");
             Integer userId = results.getInt("restroomLog.userID");
 
-            Restroom r1 = new Restroom(description, latitude, longitude, visitDate, isClean, rating, userId);
+            Restroom r1 = new Restroom(description, latitude, longitude, visitDate, isClean, rating, restroomId, userId);
             restroomArrayList.add(r1);
         }
         return restroomArrayList;
     }
-    public static Restroom updateRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating, Integer restroomId) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("Update restroomLog SET description = ?, latitude = ?, longitude = ?, visitDate = ?, isClean = ?, rating = ? WHERE id = ?");
+    public static Restroom updateRestroom(Connection conn, String description, Double latitude, Double longitude, String visitDate, boolean isClean, Integer rating,Integer userId, Integer restroomId) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("Update restroomLog SET description = ?, latitude = ?, longitude = ?, visitDate = ?, isClean = ?, rating = ?, userId = ? WHERE id = ?");
         stmt.setString(1, description);
         stmt.setDouble(2, latitude);
         stmt.setDouble(3, longitude);
@@ -111,8 +113,9 @@ public class Main {
         stmt.setBoolean(5, isClean);
         stmt.setInt(6, rating);
         stmt.setInt(7, restroomId);
+        stmt.setInt(8, userId);
         stmt.execute();
-        return new Restroom(description, latitude, longitude, visitDate, isClean, rating, restroomId);
+        return new Restroom(description, latitude, longitude, visitDate, isClean, rating, restroomId, userId);
     }
 
     public static void deleteRestroom(Connection conn, Integer restroomID) throws SQLException {
@@ -177,7 +180,7 @@ public class Main {
                     String body = request.body();
                     JsonParser parser = new JsonParser();
                     Restroom restroom = parser.parse(body, Restroom.class);
-                    insertRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, restroom.restroomId);
+                    insertRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, restroom.userId);
                     return "";
                 }
         );
@@ -187,7 +190,7 @@ public class Main {
                     String body = request.body();
                     JsonParser parser = new JsonParser();
                     Restroom restroom = parser.parse(body, Restroom.class);
-                    updateRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, restroom.restroomId);
+                    updateRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, restroom.userId, restroom.restroomId);
                     return "";
                 }
         );
@@ -209,3 +212,4 @@ public class Main {
         );
     }
 }
+//asdlkfjaslkjfalskdjflaksdjflaskdfjalskdjf
