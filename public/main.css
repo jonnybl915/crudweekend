@@ -259,3 +259,15 @@ div.mainPage {
       margin-bottom: 3%; }
     div.mainPage footer h5 {
       font-size: 10px; } }
+
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  font: red;
+  color: red;
+  /* position: relative; */
+  /* left: -11%; */
+  display: inline-block;
+  width: 23%;
+  height: 1%; }
