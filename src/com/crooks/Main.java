@@ -147,13 +147,13 @@ public class Main {
                         if (user == null) {
                             if(loguser.username.isEmpty()) {
                                 throw new Exception("YOU MUST FILL IN ALL FIELDS");
-                            } else {
-                                insertUser(conn, loguser.username, loguser.password);
                             }
                         } else if (!user.password.equals(loguser.password)) {
                             //halt(400, "Incorrect Username/Password Combination.\n" +
                                     //"Please Go Back");
                             throw new Exception("you done goofed");
+                        }else {
+                            insertUser(conn, loguser.username, loguser.password);
                         }
                         session.attribute("username", loguser.username);
                     }

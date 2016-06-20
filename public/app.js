@@ -74,6 +74,7 @@ var skipToMyLou = {
       }),
     success: function(data){
       console.log("DATA SENT",data);
+      skipToMyLou.Read()
     },
       error:function(err) {
       console.error("OOOPS!!!",err)
@@ -137,7 +138,7 @@ deleteChat: function (msgId) {
     method:"DELETE",
     success: function(data) {
       console.log("IT IS GONE",data);
-      skipToMyLou.ReadUpdate()
+      skipToMyLou.Read()
     },
     error: function(err) {
       console.error("you blew it", err);
