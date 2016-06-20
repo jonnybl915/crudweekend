@@ -200,7 +200,11 @@ public class Main {
                     JsonParser parser = new JsonParser();
                     Restroom restroom = parser.parse(body, Restroom.class);
                     insertRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, user.id);
-                    return "";
+
+                    Integer id = Integer.valueOf(request.params(":id"));
+                    Restroom restroom1 = selectRestroom(conn, id );
+                    JsonSerializer s = new JsonSerializer();
+                    return s.serialize(restroom1);
                 }
         );
         Spark.put(
