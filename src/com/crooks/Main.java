@@ -174,6 +174,22 @@ public class Main {
                     return s.serialize(restrooms);
                 }
         );
+        Spark.get(
+                "/skipToTheLoo/:id",
+                (request, response) -> {
+                    Session session = request.session();
+                    String username = session.attribute("username");
+                    if (username == null) {
+                        halt("YOU MUST LOG IN!!!");
+                    }
+
+                    Integer id = Integer.valueOf(request.params(":id"));
+                    Restroom restroom = selectRestroom(conn, id );
+                    JsonSerializer s = new JsonSerializer();
+                    return s.serialize(restroom);
+                }
+        );
+
         Spark.post(
                 "/skipToTheLoo",
                 (request, response) -> {
