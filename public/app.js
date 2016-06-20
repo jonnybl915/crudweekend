@@ -39,11 +39,13 @@ var skipToMyLou = {
       console.error("OH CRAP", err);
       alert("HOLD IT!");
       }
+      skipToMyLou.Read();
     })
   });
   /*SUBMIT TOILET INFORMATION */
   $('.btn-primary').on("click",function(event){
   event.preventDefault();
+    skipToMyLou.Read();
    if ($('#isClean').val() === "Yep!") {
       clean = true;
     }
