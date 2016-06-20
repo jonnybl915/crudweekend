@@ -2,3 +2,15 @@
 @import "_logInPage";
 @import "_mainPage";
 @import "_mobile";
+ul{
+margin-top: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+    font: red;
+    color: red;
+    /* position: relative; */
+    /* left: -11%; */
+    display: inline-block;
+    width: 23%;
+    height: 1%;
+  }

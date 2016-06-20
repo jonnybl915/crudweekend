@@ -13,6 +13,7 @@ function initMap() {
 
 $(document).ready(function(){
   skipToMyLou.events();
+  skipToMyLou.ReadUpdate()
   $('.mainPage').addClass("hidden");
 })
 
@@ -42,13 +43,14 @@ var skipToMyLou = {
     })
     skipToMyLou.Read();
   });
-  // LOGOUT BUTTON
-  // $('.logout')on('click', function(event){
-  //   event.preventDefault();
-  //   console.log('You logged out', data);
-  //   $('.mainPage').addClass('hidden');
-  //   $('.logInPage').fadeToggle(1000);
-  // })
+  //LOGOUT BUTTON
+  $('.logout').on('click', function(event){
+    event.preventDefault();
+    console.log('You logged out');
+    $('.mainPage').addClass('hidden');
+    $('.logInPage').fadeToggle(1000);
+    location.reload();
+})
   /*SUBMIT TOILET INFORMATION */
   $('.btn-primary').on("click",function(event){
   event.preventDefault();
@@ -83,6 +85,13 @@ $('.logo').on("click",function(){
   RatingData =DataFields.id
   $(this).css("border-color","red")
 });
+$(document).on('click', 'li',function(event){
+  event.preventDefault();
+      var msgId =$(this).children().text();
+      console.log(msgId);
+      skipToMyLou.deleteChat(msgId);
+      $(this).remove();
+  })
 
 },
 Read: function() {
@@ -103,5 +112,35 @@ Read: function() {
   },
   error:function(err) {
     console.log("Oh SHit!!!",err)
+  },
+})},
+ReadUpdate: function() {
+  $.ajax({
+    method:"GET",
+    url:"/skipToTheLoo",
+  success:function(data) {
+    data = JSON.parse(data)
+    console.log(data)
+    data.forEach(function(item){
+    $('ul').append(`<li class=${item.restroomId}><p>${item.restroomId}</p>: ${item.description}</li>`)
+    })
+  },
+  error:function(err) {
+    console.log(err)
   }
-})}}
+  })
+},
+deleteChat: function (msgId) {
+  var deleteUrl = "/skipToTheLoo"+ "/" + msgId;
+  $.ajax({
+    url: deleteUrl,
+    method:"DELETE",
+    success: function(data) {
+      console.log("IT IS GONE",data);
+      chatPage.getChat();
+    },
+    error: function(err) {
+      console.error("you blew it", err);
+      }
+    })}
+}
