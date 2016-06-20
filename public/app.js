@@ -1,6 +1,16 @@
 
 var RatingData=0;
 var clean = $('#isClean option')
+var map = null;
+
+function initMap() {
+  var mapDiv = document.getElementById('map');
+  map = new google.maps.Map(mapDiv, {
+    center: {lat: 44.540, lng: -78.546},
+    zoom: 8
+  });
+}
+
 $(document).ready(function(){
   skipToMyLou.events();
   $('.mainPage').addClass("hidden");
@@ -71,13 +81,13 @@ Read: function() {
     method:"GET",
     url:"/skipToTheLoo",
   success:function(data) {
-    console.log(data);
+    console.log(data.latitude, data.longitude);
     data = JSON.parse(data)
     data.forEach(function(item){
-      console.log(item);
+      console.log('item:', item);
       var mark = new google.maps.Marker({
-        position: {latitude:item.latitude, longitude:item.longitude },
-        map:$('#map'),
+        position: {lat:item.latitude, lng:item.longitude },
+        map: map,
         title:item.description
       });
     })
