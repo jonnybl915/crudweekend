@@ -137,7 +137,7 @@ deleteChat: function (msgId) {
     method:"DELETE",
     success: function(data) {
       console.log("IT IS GONE",data);
-      chatPage.getChat();
+      skipToMyLou.ReadUpdate()
     },
     error: function(err) {
       console.error("you blew it", err);
