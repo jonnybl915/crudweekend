@@ -96,7 +96,7 @@ public class Main {
             String visitDate = results.getString("restroomLog.visitDate");
             boolean isClean = results.getBoolean("restroomLog.isClean");
             Integer rating = results.getInt("restroomLog.rating");
-            Integer restroomId = results.getInt("restroomLog.restroomId");
+            Integer restroomId = results.getInt("restroomLog.id");
             Integer userId = results.getInt("restroomLog.userID");
 
             Restroom r1 = new Restroom(description, latitude, longitude, visitDate, isClean, rating, restroomId, userId);

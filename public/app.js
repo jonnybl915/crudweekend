@@ -22,7 +22,7 @@ var skipToMyLou = {
       console.log("This worked", data);
       $('.logInPage').fadeToggle(1000);
       $(".mainPage").removeClass("hidden").toggle();
-      $(".mainPage").fadeToggle(3000)
+      $(".mainPage").fadeToggle(1000)
   },
       error: function(err) {
       console.error("OH CRAP", err);
@@ -30,6 +30,13 @@ var skipToMyLou = {
       }
     })
   });
+  // LOGOUT BUTTON
+  // $('.logout')on('click', function(event){
+  //   event.preventDefault();
+  //   console.log('You logged out', data);
+  //   $('.mainPage').addClass('hidden');
+  //   $('.logInPage').fadeToggle(1000);
+  // })
   /*SUBMIT TOILET INFORMATION */
   $('.btn-primary').on("click",function(event){
   event.preventDefault();

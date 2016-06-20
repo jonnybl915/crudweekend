@@ -64,16 +64,31 @@ div.mainPage {
     }
     div.restroomRating {
       width: 28%;
+      height: 15%;
       margin-left: 12%;
       margin-right: 0;
       background-color: lightgray;
       border-radius: 16px;
       border: gray solid 2px;
     }
-    h4  {
+    .logout  {
       color: #FFF;
-      text-decoration: underline;
+      float: right;
+      margin-top: 3%;
+      margin-right: 2%;
+      margin-left: -1%;
+        &:hover {
+          opacity: .8;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+    }
+    h3 {
+      color: #FFF;
       text-align: center;
+      font-size: large;
+      text-decoration: underline;
+      margin-top: 3%;
     }
     img {
       border-radius: 13px;

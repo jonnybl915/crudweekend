@@ -85,16 +85,20 @@ html body div.mainContainer {
     div.restroomRating {
       width: 86%;
       margin-left: 14%;
+      margin-top: 3%;
     }
     h4 {
       font-size: initial;
+    }
+    img {
+      margin-left: 4%;
     }
     button.btn.btn-primary {
       float: right;
       position: absolute;
       border-radius: 10px;
       margin-right: 1%;
-      margin-top: 3%;
+      margin-top: 2%;
       margin-bottom: 6%;
       margin-left: 47%;
       width: 27%;
@@ -103,9 +107,9 @@ html body div.mainContainer {
     div#map {
       border-radius: 5px;
       position: absolute;
-      width: 72%;
-      height: 28%;
-      margin-left: 7%;
+      width: 69%;
+      height: 24%;
+      margin-left: 8%;
       bottom: 7%;
       margin-right: 10%;
       }
