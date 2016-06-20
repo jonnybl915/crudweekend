@@ -120,15 +120,28 @@ div.mainPage {
     border: solid gray 2px; }
   div.mainPage div.restroomRating {
     width: 28%;
+    height: 15%;
     margin-left: 12%;
     margin-right: 0;
     background-color: lightgray;
     border-radius: 16px;
     border: gray solid 2px; }
-  div.mainPage h4 {
+  div.mainPage .logout {
     color: #FFF;
+    float: right;
+    margin-top: 3%;
+    margin-right: 2%;
+    margin-left: -1%; }
+    div.mainPage .logout:hover {
+      opacity: .8;
+      text-decoration: underline;
+      cursor: pointer; }
+  div.mainPage h3 {
+    color: #FFF;
+    text-align: center;
+    font-size: large;
     text-decoration: underline;
-    text-align: center; }
+    margin-top: 3%; }
   div.mainPage img {
     border-radius: 13px;
     border: solid white 2px;
@@ -218,15 +231,18 @@ div.mainPage {
       margin-bottom: 3%; }
     div.mainPage div.restroomRating {
       width: 86%;
-      margin-left: 14%; }
+      margin-left: 14%;
+      margin-top: 3%; }
     div.mainPage h4 {
       font-size: initial; }
+    div.mainPage img {
+      margin-left: 4%; }
     div.mainPage button.btn.btn-primary {
       float: right;
       position: absolute;
       border-radius: 10px;
       margin-right: 1%;
-      margin-top: 3%;
+      margin-top: 2%;
       margin-bottom: 6%;
       margin-left: 47%;
       width: 27%;
@@ -234,9 +250,9 @@ div.mainPage {
     div.mainPage div#map {
       border-radius: 5px;
       position: absolute;
-      width: 72%;
-      height: 28%;
-      margin-left: 7%;
+      width: 69%;
+      height: 24%;
+      margin-left: 8%;
       bottom: 7%;
       margin-right: 10%; }
     div.mainPage fieldset.form-group {
