@@ -201,10 +201,10 @@ public class Main {
                     Restroom restroom = parser.parse(body, Restroom.class);
                     insertRestroom(conn, restroom.description, restroom.latitude, restroom.longitude, restroom.visitDate, restroom.isClean, restroom.rating, user.id);
 
-                    Integer id = Integer.valueOf(request.params(":id"));
-                    Restroom restroom1 = selectRestroom(conn, id );
-                    JsonSerializer s = new JsonSerializer();
-                    return s.serialize(restroom1);
+//                    Integer id = Integer.valueOf(request.params("restroomId"));
+//                    Restroom restroom1 = selectRestroom(conn, id );
+//                    JsonSerializer s = new JsonSerializer();
+                    return "";
                 }
         );
         Spark.put(
