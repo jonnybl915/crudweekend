@@ -39,8 +39,8 @@ var skipToMyLou = {
       console.error("OH CRAP", err);
       alert("HOLD IT!");
       }
-      skipToMyLou.Read();
     })
+    skipToMyLou.Read();
   });
   // LOGOUT BUTTON
   // $('.logout')on('click', function(event){
